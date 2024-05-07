@@ -2,8 +2,6 @@
 
 ## A personal portfolio website made using `Astro`.
 
-![astro-bento-portfolio | Bento-like Personal Porfolio Template](public/preview.png)
-
 ## Features
 
 - Modern and Minimal bento-like, sleek UI Design
