@@ -6,16 +6,20 @@ const GlobeComponent = () => {
   let mapContainer: HTMLDivElement | undefined;
 
   const visitedCountries = [
-    "France",
-    "China",
+    "USA",
+    "Mexico",
+    "Canada",
     "Italy",
-    "Sri Lanka",
-    "Turkey",
-    "Greece",
-    "Malta",
-    "Hungary",
-    "Portugal",
-    "Marocco",
+    "Germany",
+    "France",
+    "United Kingdom",
+    "Ireland",
+    "Sweden",
+    "Switzerland",
+    "Netherlands",
+    "Norway",
+    "Japan",
+    "Egypt",
   ];
 
   onMount(() => {
@@ -43,7 +47,7 @@ const GlobeComponent = () => {
 
     svg
       .append("circle")
-      .attr("fill", "#EEE")
+      .attr("fill", "#505050")
       .attr("stroke", "#000")
       .attr("stroke-width", "0.2")
       .attr("cx", width / 2)
@@ -61,7 +65,7 @@ const GlobeComponent = () => {
       .append("path")
       .attr("d", (d: any) => pathGenerator(d as any))
       .attr("fill", (d: { properties: { name: string } }) =>
-        visitedCountries.includes(d.properties.name) ? "#E63946" : "white"
+        visitedCountries.includes(d.properties.name) ? "#a855f7" : "white"
       )
       .style("stroke", "black")
       .style("stroke-width", 0.3)

@@ -1,12 +1,8 @@
-# ⚡️astro-bento-portfolio
+# astro-bento-portfolio
 
 ## A personal portfolio website made using `Astro`.
 
 ![astro-bento-portfolio | Bento-like Personal Porfolio Template](public/preview.png)
-
-To view a demo example, **[click here](https://sparkly-speculoos-0c9197.netlify.app/)**
-
-or my portfolio **[click here](https://gianmarco.xyz/)**
 
 ## Features
 
@@ -63,11 +59,3 @@ remember to replace the `site` and other properties with your data in `astro.con
 Deploying your website on Netlify it's optional but I reccomand it in order to deploy it faster and easly.
 
 You just need to fork this repo and linking it to your Netlify account.
-
-or
-
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Ladvace/astro-bento-portfolio)
-
-## Authors ❤️
-
-- Gianmarco - https://github.com/Ladvace

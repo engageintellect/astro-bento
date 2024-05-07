@@ -2,31 +2,39 @@ export function trimText(input: string, maxLength: number = 100): string {
   if (input.length <= maxLength) return input;
   return input.substring(0, maxLength - 3) + "...";
 }
-export function getCurrentTimeInItaly(): Date {
+
+// Helper function to determine if Daylight Saving Time is in effect for a given date
+function isDST(date: Date): boolean {
+  const jan = new Date(date.getFullYear(), 0, 1).getTimezoneOffset();
+  const jul = new Date(date.getFullYear(), 6, 1).getTimezoneOffset();
+  return Math.max(jan, jul) !== date.getTimezoneOffset(); // True if DST is in effect
+}
+
+export function getCurrentTimeInLosAngeles(): Date {
   // Create a date object with the current UTC time
   const now = new Date();
 
-  // Convert the UTC time to Italy's time
-  const offsetItaly = 2; // Italy is in Central European Summer Time (UTC+2), but you might need to adjust this based on Daylight Saving Time
-  now.setHours(now.getUTCHours() + offsetItaly);
+  // Los Angeles is in Pacific Time (UTC-8), but during Daylight Saving Time it's UTC-7
+  const offsetLA = isDST(now) ? -7 : -8;
+  now.setHours(now.getUTCHours() + offsetLA);
 
   return now;
 }
 
-export function formatTimeForItaly(date: Date): string {
+export function formatTimeForLosAngeles(date: Date): string {
   const options: Intl.DateTimeFormatOptions = {
     hour: "numeric",
     minute: "2-digit",
     second: "2-digit",
     hour12: true, // This will format the time in 12-hour format with AM/PM
-    timeZone: "Europe/Rome",
+    timeZone: "America/Los_Angeles",
   };
 
   let formattedTime = new Intl.DateTimeFormat("en-US", options).format(date);
 
-  // Append the time zone abbreviation. You can automate this with libraries like `moment-timezone`.
-  // For simplicity, here I'm just appending "CET", but do remember that Italy switches between CET and CEST.
-  formattedTime += " CET";
+  // Append the time zone abbreviation. For simplicity, here I'm just appending "PST" or "PDT" depending on Daylight Saving Time.
+  const timezoneSuffix = isDST(date) ? " PDT" : " PST";
+  formattedTime += timezoneSuffix;
 
   return formattedTime;
 }
