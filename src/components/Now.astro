@@ -4,14 +4,19 @@ import Pulse from "./Pulse.astro";
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
-  <div class="flex justify-between w-full items-start mb-2">
-    <div class="flex flex-col">
-      <h2>Now</h2>
-      <a href="https://sive.rs/nowff" target="_blank">
-        <span class="text-xs text-gray-500 cursor-pointer">what's that ?</span>
-      </a>
+  <div class="w-full md:w-48 lg:w-full">
+    <div class="flex justify-between w-full items-start mb-2">
+      <div class="flex flex-col">
+        <h1 class="text-white text-xl font-bold">Now</h1>
+        <a href="https://sive.rs/nowff" target="_blank">
+          <span
+            class="hover:text-purple-500 text-sm text-gray-500 cursor-pointer"
+            >what is this?</span
+          >
+        </a>
+      </div>
+      <Pulse />
     </div>
-    <Pulse />
+    <div class="">Currently working as a freelance developer.</div>
   </div>
-  <p class="text-xs">Currently working as freelancer</p>
 </Card>

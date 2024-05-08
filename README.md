@@ -8,7 +8,7 @@
 - All in one page (almost)
 - Fully Responsive
 - Performances and SEO optimizations
-- Ready to be deployed on [Netlify](https://www.netlify.com/)
+- Ready to be deployed on [Vercel](https://www.vercel.com/)
 - Blog
 - RSS support (your-domain/rss.xml)
 - Cool 3d globe
@@ -16,20 +16,21 @@
 ## Tech Stack
 
 - [Astro](https://astro.build)
-- [unocss](https://unocss.dev/)
-- [motion](https://motion.dev/)
-- [d3](https://d3js.org/)
+- [Unocss](https://unocss.dev/)
+- [Motion](https://motion.dev/)
+- [D3](https://d3js.org/)
+- [Tailwind](https://tailwindcss.com/)
 
 # Steps ▶️
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/Ladvace/astro-bento-portfolio
+$ git clone https://github.com/engageintellect/astro-bento
 ```
 
 ```bash
 # Go into the repository
-$ cd astro-bento-portfolio
+$ cd astro-bento
 ```
 
 ```bash
