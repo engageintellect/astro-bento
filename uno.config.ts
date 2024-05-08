@@ -7,11 +7,11 @@ export default defineConfig({
   },
   theme: {
     boxShadow: {
-      custom: `2px 2px 0`,
+      custom: `2px 2px 0px`,
       "custom-hover": `1px 1px 0`,
     },
     fontFamily: {
-      sans: ["Ubuntu", "Ubuntu-Bold"],
+      sans: ["Ubuntu"],
     },
     gridTemplateRows: {
       "auto-250": "repeat(auto-fill, 250px)",
