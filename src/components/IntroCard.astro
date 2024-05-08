@@ -12,12 +12,12 @@ import { Image } from "astro:assets";
     <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
       <div class="flex flex-col h-full">
         <h6 class="text-sm f-light m-0 text-gray-500">welcome</h6>
-        <p class="m-0 f-light text-xl w-2/3 md:w-full f-light">
+        <p class="m-0 f-light text-xl w-2/3 md:w-full f-light drop-shadow">
           Hi, I'm <b>Josh</b>, a software developer with strong focus on the
           user experience, animations and micro interactions
         </p>
       </div>
-      <div class="flex gap-4">
+      <div class="flex gap-2 md:gap-4">
         <a href={LINKS.github} aria-label="github profile" target="_blank">
           <Button aria-label="github profile">
             <Icon name="ri:github-fill" class="h-7 w-7" />
@@ -53,7 +53,7 @@ import { Image } from "astro:assets";
     /> -->
     <img
       src="https://github.com/engageintellect.png"
-      class="w-auto max-h-[300px] md:max-h-[100%] select-none absolute right-[-110px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none rounded-lg"
+      class="w-auto max-h-[300px] md:max-h-[100%] select-none absolute right-[-100px] bottom-[-20px] z-[-1] opacity-50 md:opacity-100 md:relative md:right-auto md:bottom-auto md:z-auto pointer-events-none rounded-lg"
       alt="github profile image"
     />
   </div>
