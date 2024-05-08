@@ -1,8 +1,8 @@
 export const LINKS = {
   github: "https://github.com/engageintellect",
-  linkedin: "https://www.linkedin.com/in/gianmarco-cavallo/",
-  medium: "https://ladvace.medium.com/",
-  discord: "https://discordapp.com/users/163300027618295808",
+  linkedin: "https://www.linkedin.com/in/josh-c-b8ba58188/",
+  medium: "https://medium.com/@engageintellect",
+  discord: "https://discordapp.com/users/engage_intellect",
   dribble: "https://dribbble.com/Ladvace_Jace",
 };
 
