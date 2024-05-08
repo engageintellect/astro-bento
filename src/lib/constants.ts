@@ -4,6 +4,7 @@ export const LINKS = {
   medium: "https://medium.com/@engageintellect",
   discord: "https://discordapp.com/users/engage_intellect",
   dribble: "https://dribbble.com/Ladvace_Jace",
+  email: "engage_intellect@protonmail.com",
 };
 
 export const loaderAnimation = [

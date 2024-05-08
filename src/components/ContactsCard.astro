@@ -1,41 +1,47 @@
 ---
 import Card from "./Card/index.astro";
 import { LINKS } from "../lib/constants";
+import Button from "./Button.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-4">
   <div class="h-full">
     <header class="flex items-center">
-      <h1 class="text-white text-xl font-bold">
-        Let's start working together!
-      </h1>
+      <h1 class="text-white text-xl f-bold">Let's start working together!</h1>
     </header>
     <div class="flex flex-col mt-4">
       <h2 class="text-gray-500">Contact Details</h2>
-      <a
-        href="mailto:engage_intellect@protonmail.com"
-        class="text-sm hover:text-purple-500 hover:underline"
-        >engage_intellect@protonmail.com</a
-      >
 
-      <p class="pt-2 text-sm">Orange County, CA</p>
-    </div>
-    <div class="flex flex-col mt-4 w-fit">
-      <h2 class="text-gray-500">Socials</h2>
-      <ul>
-        <li>
-          <a href={LINKS.linkedin} target="_blank">Linkedin</a>
-        </li>
-        <li>
-          <a href={LINKS.github} target="_blank">Github</a>
-        </li>
-        <li>
-          <a href={LINKS.medium} target="_blank">Medium</a>
-        </li>
-        <li>
-          <a href={LINKS.discord} target="_blank">Discord</a>
-        </li>
-      </ul>
+      <div class="w-full">
+        <a href={`mailto:${LINKS.email}`} aria-label="email me">
+          <Button aria-label="github profile">
+            <div class="flex items-center gap-2">
+              <Icon name="ri:mail-fill" class="h-6" />
+              <div>email me</div>
+              <span class="sr-only">GitHub Profile</span>
+            </div>
+          </Button>
+        </a>
+        <!-- <p class="pt-2 text-sm">Orange County, CA</p> -->
+      </div>
+      <div class="flex flex-col mt-4 w-fit">
+        <h2 class="text-gray-500">Socials</h2>
+        <ul>
+          <li>
+            <a href={LINKS.linkedin} target="_blank">Linkedin</a>
+          </li>
+          <li>
+            <a href={LINKS.github} target="_blank">Github</a>
+          </li>
+          <li>
+            <a href={LINKS.medium} target="_blank">Medium</a>
+          </li>
+          <li>
+            <a href={LINKS.discord} target="_blank">Discord</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </Card>

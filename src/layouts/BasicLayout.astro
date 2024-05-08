@@ -125,25 +125,32 @@ const schema =
 
 <style is:global>
   @font-face {
-    font-family: "CabinetGrotesk";
-    src: url("/fonts/CabinetGrotesk-Variable.ttf") format("truetype-variations");
+    font-family: "Ubuntu";
+    src: url("/fonts/Ubuntu-Regular.ttf") format("truetype-variations");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
     font-weight: 100 1000;
   }
   @font-face {
-    font-family: "Satoshi";
-    src: url("/fonts/Satoshi-Variable.ttf") format("truetype-variations");
+    font-family: "Ubuntu-Bold";
+    src: url("/fonts/Ubuntu-Bold.ttf") format("truetype-variations");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
     font-weight: 100 1000;
   }
-
+  @font-face {
+    font-family: "Ubuntu-Light";
+    src: url("/fonts/Ubuntu-Light.ttf") format("truetype-variations");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 1000;
+  }
   body {
     margin: 0;
-    font-family: "Satoshi", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -153,13 +160,22 @@ const schema =
   h4,
   h5,
   h6 {
-    font-family: "Cabinet Grotesk", sans-serif;
+    font-family: "Ubuntu", sans-serif;
   }
   p {
-    font-family: "Satoshi";
+    font-family: "Ubuntu";
   }
 
   b {
+    font-family: "Ubuntu-Bold";
     font-weight: 700 !important;
+  }
+
+  .f-bold {
+    font-family: "Ubuntu-Bold";
+  }
+
+  .f-light {
+    font-family: "Ubuntu-Light";
   }
 </style>

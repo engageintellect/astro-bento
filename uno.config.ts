@@ -11,7 +11,7 @@ export default defineConfig({
       "custom-hover": `1px 1px 0`,
     },
     fontFamily: {
-      sans: ["CabinetGrotesk", "Satoshi"],
+      sans: ["Ubuntu", "Ubuntu-Bold"],
     },
     gridTemplateRows: {
       "auto-250": "repeat(auto-fill, 250px)",
@@ -62,7 +62,7 @@ export default defineConfig({
     presetWebFonts({
       provider: "fontshare",
       fonts: {
-        sans: ["Cabinet Grotesk", "Satoshi"],
+        sans: ["Ubuntu"],
         serif: "Zodiak",
       },
     }),
