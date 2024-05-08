@@ -52,8 +52,8 @@ $ npm run dev
 
 remember to replace the `site` and other properties with your data in `astro.config.mjs`
 
-# Deploy on Netlify 🚀
+# Deploy on Vercel 🚀
 
-Deploying your website on Netlify it's optional but I reccomand it in order to deploy it faster and easly.
+Deploying your website on Vercel. it's optional but I reccomand it in order to deploy it faster and easly.
 
-You just need to fork this repo and linking it to your Netlify account.
+You just need to fork this repo and link it to your Vercel account.

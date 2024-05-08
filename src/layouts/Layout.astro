@@ -12,6 +12,10 @@ const { title, description, page, fullScreen } = Astro.props;
 ---
 
 <BasicLayout title={title} description={description}>
+  <script
+    defer
+    src="https://analytics.us.umami.is/script.js"
+    data-website-id="bfea2621-8ce2-44be-8d0a-16a7f5bdae37"></script>
   <div
     slot="loader"
     class="loader bg-darkslate-700 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"
