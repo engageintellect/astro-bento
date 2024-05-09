@@ -6,12 +6,14 @@ interface Props {
 const { rounded } = Astro.props;
 ---
 
-<button
-  class={`custom-btn flex items-center justify-center text-xl shadow-custom shadow-white active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-gray-200 px-4 py-2 border border-white transition-colors duration-100 ease-in-out bg-gray-900 cursor-pointer md:hover:scale-[102%] transition-all duration-200 ${
-    rounded ? "rounded-full" : "rounded-lg"
-  }`}
->
-  <div class="">
-    <slot />
-  </div>
-</button>
+<div class="hover:scale-[102%] duration-500 transition-all">
+  <button
+    class={`custom-btn flex items-center justify-center text-xl shadow-custom shadow-gray-500 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] text-gray-200 px-4 py-2 border border-gray-500 transition-colors duration-100 ease-in-out bg-gray-900 cursor-pointer ${
+      rounded ? "rounded-full" : "rounded-lg"
+    }`}
+  >
+    <div class="">
+      <slot />
+    </div>
+  </button>
+</div>
