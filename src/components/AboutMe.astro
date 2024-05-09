@@ -1,5 +1,6 @@
 ---
 import Card from "./Card/index.astro";
+import TechCard from "./TechCard.astro";
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-6" title="About me">
@@ -8,8 +9,233 @@ import Card from "./Card/index.astro";
       Fullstack software developer from Orange County, CA.
     </p>
 
+    <div class="text-xl f-bold m-0 z-20 mt-5">Technologies</div>
+
     <p class="text-sm f-light">My primary technologies of choice include:</p>
-    <ul class="list-disc list-inside">
+
+    <div class="flex overflow-auto gap-2 py-5 snap-x snap-mandatory">
+      <div class="w-full snap-center">
+        <TechCard
+          title="Next.js"
+          description="A versatile React framework for building performant server-side rendered and statically generated web applications with seamless integration with popular web technologies."
+          iconName="cib:next-js"
+          cardUrl="https://nextjs.org"
+          tag="JS Framework"
+        />
+      </div>
+      <div class="w-full snap-center">
+        <TechCard
+          title="Sveltekit"
+          description="A lightweight and fast web framework for building server-rendered and static sites with Svelte, offering intuitive development and easy deployment."
+          iconName="vscode-icons:file-type-svelte"
+          cardUrl="https://kit.svelte.dev"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="React"
+          description="A popular JavaScript library for building user interfaces with reusable components and a virtual DOM, backed by a vast ecosystem of tools and resources."
+          iconName="logos:react"
+          cardUrl="https://reactjs.org"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Astro"
+          description="A modern static site generator that combines performance, flexibility, and simplicity, enabling developers to build dynamic sites with modern web technologies."
+          iconName="vscode-icons:file-type-astro"
+          cardUrl="https://astro.build"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Typescript"
+          description="A superset of JavaScript that provides static type checking, enhanced IDE support, and other features for safer and more maintainable code, ideal for large-scale projects."
+          iconName="vscode-icons:file-type-typescript-official"
+          cardUrl="https://www.typescriptlang.org"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Python"
+          description="A versatile and popular high-level programming language that emphasizes readability, simplicity, and productivity, with extensive libraries and frameworks for web development and machine learning."
+          iconName="vscode-icons:file-type-python"
+          cardUrl="https://www.python.org"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="OpenAI"
+          description="A research laboratory that develops artificial intelligence technology, including the GPT-3 language model, which can generate human-like text in response to prompts."
+          iconName="simple-icons:openai"
+          cardUrl="https://openai.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Hugging Face"
+          description="An open-source natural language processing library that provides a wide range of pretrained models and tools for building conversational AI applications."
+          iconName="noto-v1:hugging-face"
+          cardUrl="https://huggingface.co"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="PyTorch"
+          description="A popular machine learning library that provides a Python interface for tensor computation and deep neural networks, with extensive support for GPU acceleration."
+          iconName="cib:pytorch"
+          cardUrl="https://pytorch.org"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Tensorflow"
+          description=""
+          description="An open-source machine learning framework that enables developers to easily build and deploy ML models, offering comprehensive libraries and tools for research and production."
+          iconName="cib:tensorflow"
+          cardUrl="https://tensorflow.org"
+          tag="AI/ML"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Tailwind"
+          description="A utility-first CSS framework for rapidly building custom user interfaces with a modern design system, offering a wide range of pre-built components and utilities."
+          iconName="vscode-icons:file-type-tailwind"
+          cardUrl="https://tailwindcss.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Django"
+          description="A modern Python framework for building APIs with a focus on developer productivity and code quality, offering automatic documentation and data validation."
+          iconName="simple-icons:django"
+          cardUrl="https://djangoproject.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="MySQL"
+          description="A popular relational database management system that is widely used for storing and managing structured data in various applications.."
+          iconName="vscode-icons:file-type-mysql"
+          cardUrl="https://mysql.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Supabase"
+          description="An open-source alternative to Firebase that provides a suite of tools for building applications with serverless functions, authentication, and a PostgreSQL database."
+          iconName="simple-icons:supabase"
+          cardUrl="https://supabase.io"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="GraphQL"
+          description="A query language for APIs that provides a flexible and efficient approach to data fetching, enabling clients to specify exactly what data they need and nothing more."
+          iconName="vscode-icons:file-type-graphql"
+          cardUrl="https://graphql.org"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="FastAPI"
+          description="A modern Python framework for building APIs with a focus on developer productivity and code quality, offering automatic documentation and data validation."
+          iconName="simple-icons:fastapi"
+          cardUrl="https://fastapi.tiangolo.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Node.js"
+          description="An open-source, cross-platform runtime environment that enables developers to build server-side applications in JavaScript. It features an event-driven, non-blocking I/O model, making it ideal for scalable network applications."
+          iconName="logos:nodejs-icon"
+          cardUrl="https://nodejs.org"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Linux"
+          description="An open-source operating system that provides a free and highly customizable alternative to Windows and macOS, with a wide range of distributions and desktop environments."
+          iconName="logos:linux-tux"
+          cardUrl="https://www.linux.org"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Ubuntu"
+          description="An open-source operating system based on Debian Linux. Used for desktops, servers, and clouds. Ubuntu is known for its security, regular updates, and strong community support."
+          iconName="logos:ubuntu"
+          cardUrl="https://www.ubuntu.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Nginx"
+          description="A web server software known for its high performance, scalability, and reverse proxy capabilities. It is commonly used to serve web content, handle load balancing, and act as a reverse proxy."
+          iconName="logos:nginx"
+          cardUrl="https://www.nginx.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="Vercel"
+          description="A cloud platform for static sites and serverless functions that provides a global edge network, serverless functions, and other tools for rapid deployment and scaling."
+          iconName="ion:logo-vercel"
+          cardUrl="https://vercel.com"
+          tag="Web"
+        />
+      </div>
+
+      <div class="w-full snap-center">
+        <TechCard
+          title="AWS"
+          description="A cloud platform that provides a wide range of services for building and deploying applications, including serverless functions, databases, storage, and more."
+          iconName="mdi:aws"
+          cardUrl="https://aws.amazon.com"
+          tag="Web"
+        />
+      </div>
+    </div>
+
+    <!-- <ul class="list-disc list-inside">
       <li>JavaScript/TypeScript</li>
       <li>Svelte</li>
       <li>Next.js</li>
@@ -18,7 +244,7 @@ import Card from "./Card/index.astro";
       <li>React</li>
       <li>Nodejs</li>
       <li>Linux</li>
-    </ul>
+    </ul> -->
     <p class="text-sm f-light">
       While I do have preferred technologies I like to use, I strive to choose
       the best tool for the job, even if it's not in my list. My goal is always

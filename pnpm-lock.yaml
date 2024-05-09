@@ -20,12 +20,30 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^7.5.4
     version: 7.5.4(astro@4.5.18)
+  '@iconify-json/cib':
+    specifier: ^1.1.8
+    version: 1.1.8
+  '@iconify-json/ion':
+    specifier: ^1.1.18
+    version: 1.1.18
+  '@iconify-json/logos':
+    specifier: ^1.1.42
+    version: 1.1.42
   '@iconify-json/mdi':
     specifier: ^1.1.66
     version: 1.1.66
+  '@iconify-json/noto-v1':
+    specifier: ^1.1.11
+    version: 1.1.11
   '@iconify-json/ri':
     specifier: ^1.1.20
     version: 1.1.20
+  '@iconify-json/simple-icons':
+    specifier: ^1.1.101
+    version: 1.1.101
+  '@iconify-json/vscode-icons':
+    specifier: ^1.1.34
+    version: 1.1.34
   '@rive-app/canvas':
     specifier: ^2.14.0
     version: 2.14.0
@@ -1151,14 +1169,50 @@ packages:
     requiresBuild: true
     optional: true
 
+  /@iconify-json/cib@1.1.8:
+    resolution: {integrity: sha512-wL7uxAq8pC9la11dRSHUrz4g4cNLhoR8VC/rnmTcswER/vICNgUYt7vNs0VVaGjC6G1dTY+iyKS4ooRCXChsqw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/ion@1.1.18:
+    resolution: {integrity: sha512-iS4PRBySPnTqz4IyNGc62KtNs4mG9oh/mXyVXcMDluxGOz7W4MSnKeazz23x7aQLHAx/JhbFStl9YMSt2z3AQg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/logos@1.1.42:
+    resolution: {integrity: sha512-/f+frtPm3m3Z30oy8Pk+QqRDkbmAiIaWGPl5CmsCXm15MVfvw9a/V/gD7WzdyuSGAZcFuQaqbHXj92y/n+2ifg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify-json/mdi@1.1.66:
     resolution: {integrity: sha512-7KPF2RVUUWav/hXCM8Ti/smqu3cmgePJpiX9CSkldiL+80+eBRBeKlc4vPOc9jhAItlqIU1vKsbKoPP0JIfgbg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
 
+  /@iconify-json/noto-v1@1.1.11:
+    resolution: {integrity: sha512-yIbY18d1sQxKW5jitmnqmIC8611olDLQzIQBGXEpkHGqxExa6mi4zaAmYw9e44Jb8HUqgE1YtP7HeKlW95n3rA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify-json/ri@1.1.20:
     resolution: {integrity: sha512-yScIGjLFBCJKWKskQTWRjNI2Awoq+VRDkRxEsCQvSfdz41n+xkRtFG2K6J1OVI90ClRHfjFC8VJ2+WzxxyFjTQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/simple-icons@1.1.101:
+    resolution: {integrity: sha512-7h7iUvCok031UcYUt2+wPD21tOwu/AzFB2I2PzzoC3R1jsNJjn5YV3v1q0g2CXcMYAzcsCyH00RbpFPFAiqjcw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/vscode-icons@1.1.34:
+    resolution: {integrity: sha512-aBNizvBp+I1r1Fs5YUhFqLPmw8nY8PBe0N8hov9Ri1KdEqILILOMT5k+3Vvk0koEMLENyLbOTYtOVf0/KU4HiA==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
