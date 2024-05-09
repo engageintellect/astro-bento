@@ -13,8 +13,9 @@ import { Image } from "astro:assets";
       <div class="flex flex-col h-full">
         <h6 class="text-sm f-light m-0 text-gray-500">welcome</h6>
         <p class="m-0 f-light text-xl w-2/3 md:w-full f-light drop-shadow">
-          Hi, I'm <b>Josh</b>, a software developer with strong focus on the
-          user experience, animations and micro interactions
+          Hi, I'm <b>Josh</b>, a fullstack software developer and open source
+          contributor with strong focus on the user experience, AI, micro
+          interactions, and automation.
         </p>
       </div>
       <div class="flex gap-2 md:gap-4">
@@ -30,10 +31,10 @@ import { Image } from "astro:assets";
             <span class="sr-only">Linkedin Profile</span>
           </Button>
         </a>
-        <a href={LINKS.dribble} aria-label="dribble profile" target="_blank">
+        <a href={LINKS.medium} aria-label="dribble profile" target="_blank">
           <Button aria-label="dribble profile">
-            <Icon name="ri:dribbble-fill" class="h-7 w-7" />
-            <span class="sr-only">Dribble Profile</span>
+            <Icon name="ri:medium-fill" class="h-7 w-7" />
+            <span class="sr-only">Medium Profile</span>
           </Button>
         </a>
         <Tooltip client:visible>

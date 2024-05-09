@@ -20,6 +20,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^7.5.4
     version: 7.5.4(astro@4.5.18)
+  '@iconify-json/mdi':
+    specifier: ^1.1.66
+    version: 1.1.66
   '@iconify-json/ri':
     specifier: ^1.1.20
     version: 1.1.20
@@ -1147,6 +1150,12 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@iconify-json/mdi@1.1.66:
+    resolution: {integrity: sha512-7KPF2RVUUWav/hXCM8Ti/smqu3cmgePJpiX9CSkldiL+80+eBRBeKlc4vPOc9jhAItlqIU1vKsbKoPP0JIfgbg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
 
   /@iconify-json/ri@1.1.20:
     resolution: {integrity: sha512-yScIGjLFBCJKWKskQTWRjNI2Awoq+VRDkRxEsCQvSfdz41n+xkRtFG2K6J1OVI90ClRHfjFC8VJ2+WzxxyFjTQ==}
