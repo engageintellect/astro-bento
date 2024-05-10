@@ -18,12 +18,12 @@ import Globe from "../components/Globe";
     loaderAnimation,
     [
       cards,
-      { y: ["40%", "0%"], opacity: [0, 1] },
+      { y: ["33%", "0%"], opacity: [0, 1] },
       {
         at: "-0.1",
         duration: 0.4,
-        delay: stagger(0.3),
-        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+        delay: stagger(0.33),
+        easing: spring({ velocity: 100, stiffness: 50, damping: 9 }),
       },
     ],
   ];
@@ -58,7 +58,7 @@ import Globe from "../components/Globe";
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2 flex gap-4"
       title="Projects"
-      href="https://engage-showcase.vercel.app/projects"
+      href="/projects"
     >
       <div>Personal projects and experiments.</div>
     </Card>
@@ -71,3 +71,9 @@ import Globe from "../components/Globe";
     </Card>
   </main>
 </Layout>
+
+<style is:global>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>

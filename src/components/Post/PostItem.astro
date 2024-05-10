@@ -1,0 +1,57 @@
+---
+import { formatDate } from "../../lib/helpers";
+
+interface Props {
+  title: string;
+  date: Date;
+  url: string;
+  category: string;
+  tags: string[];
+  description: string;
+}
+
+const { title, description, date, url, category, tags } = Astro.props;
+---
+
+<li class="w-full">
+  <a
+    class="text-sm md:text-base decoration-none flex flex-col justify-between text-neutral-100 ease-in-out transition-colors border-gray-700 hover:border-gray-500 border my-2 p-4 rounded"
+    href={`/${category}/${url}`}
+  >
+    <time
+      class="text-xs text-neutral-100/70"
+      datetime={date.toISOString()}
+      data-date={date.toISOString()}
+    >
+      {formatDate(date)}
+    </time>
+
+    <div class="flex flex-col py-2">
+      <div class="inline-block f-bold text-2xl">
+        {title}
+      </div>
+
+      <div class="text-neutral-100/70 f-light">
+        {description}
+      </div>
+    </div>
+
+    <div class="text-neutral-100/50 f-thin text-sm mt-2">Technologies:</div>
+
+    <div class="flex gap-1 overflow-scroll">
+      {
+        tags.map((tag) => (
+          <span class="text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap">
+            #{tag}
+          </span>
+        ))
+      }
+    </div>
+  </a>
+</li>
+
+<style is:global>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>

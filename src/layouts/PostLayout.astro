@@ -1,0 +1,116 @@
+---
+import { formatDate } from "../lib/helpers";
+import type { MarkdownLayoutProps } from "astro";
+import BasicLayout from "./BasicLayout.astro";
+import { Icon } from "astro-icon/components";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  category: string;
+  description: string;
+  pubDate: string;
+  minutesRead: string;
+  image: string;
+  projectURL: string;
+  repoURL: string;
+  tags: string[];
+}>;
+
+const { slug } = Astro.params;
+const { frontmatter } = Astro.props;
+---
+
+<BasicLayout
+  frontmatter={frontmatter}
+  slug={slug}
+  page="blog"
+  title={`Josh Chadwick - ${frontmatter.title}`}
+  description={frontmatter.description}
+>
+  <main class="mx-auto max-w-xl w-full h-screen p-2 md:py-5 text-neutral-100">
+    <a href=`javascript:history.back()`>
+      <button
+        class="text-neutral-100 group border border-gray-500 px-4 py-2 mb-5 rounded"
+      >
+        <div class="flex items-center gap-2">
+          <Icon
+            name="mdi:arrow-left"
+            class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200 ease-in-out"
+          />
+          <div>back</div>
+        </div>
+      </button>
+    </a>
+    <!-- <hr class="border-[.5px] border-gray-100/10 mb-5" /> -->
+
+    <div
+      class="w-fit px-2 py-1 rounded rounded-b-none border-b-none border border-gray-500 text-neutral-100/70 capitalize text-sm"
+    >
+      {frontmatter.category}
+    </div>
+    <div class="border-t border-gray-500">
+      <div class="text-5xl f-bold mt-5">
+        {frontmatter.title}
+      </div>
+      <div class="text-neutral-100/70">
+        {frontmatter.description}
+      </div>
+
+      <div class="mt-5 text-neutral-100/70 f-light text-sm">Technologies:</div>
+
+      <div class="flex gap-1 w-full overflow-scroll">
+        {
+          frontmatter.tags.map((tag) => (
+            <div class="text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap">
+              #{tag}
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex justify-between mt-5 text-gray-500 text-sm">
+        <p>{formatDate(new Date(frontmatter.pubDate))}</p>
+        <p>{frontmatter.minutesRead}</p>
+      </div>
+
+      <a href={frontmatter.projectURL || ""}>
+        <img
+          src={frontmatter.image}
+          alt=""
+          class="border border-gray-500/50 w-full object-cover h-64"
+        />
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2 mt-2">
+      {
+        frontmatter.projectURL && (
+          <a href={frontmatter.projectURL}>
+            <button class="text-white border rounded py-2 px-4 border-gray-500">
+              Go to App
+            </button>
+          </a>
+        )
+      }
+      {
+        frontmatter.repoURL && (
+          <a href={frontmatter.repoURL}>
+            <button class="text-white border rounded py-2 px-4 border-gray-500">
+              Repository
+            </button>
+          </a>
+        )
+      }
+    </div>
+
+    <article class="prose prose-p:text-purple-500 prose-slate prose-invert">
+      <slot />
+    </article>
+  </main>
+</BasicLayout>
+
+<style is:global>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>

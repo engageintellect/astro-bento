@@ -1,0 +1,53 @@
+---
+import { formatDate } from "../lib/helpers";
+import type { MarkdownLayoutProps } from "astro";
+import BasicLayout from "./BasicLayout.astro";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  category: string;
+  description: string;
+  pubDate: string;
+  minutesRead: string;
+  image: string;
+  projectURL: string;
+  repoURL: string;
+}>;
+
+const { slug } = Astro.params;
+const { frontmatter } = Astro.props;
+---
+
+<BasicLayout
+  frontmatter={frontmatter}
+  slug={slug}
+  page="blog"
+  title={`Josh Chadwick - ${frontmatter.title}`}
+  description={frontmatter.description}
+>
+  <main class="mx-auto max-w-xl w-full h-screen p-2 md:p-5 text-neutral-100">
+    <a href=`/${frontmatter.category}`>
+      <button class=""> Back </button>
+    </a>
+    <div class="my-2">
+      <div class="w-fit px-2 rounded border border-gray-500">
+        {frontmatter.category}
+      </div>
+      <h1 class="text-5xl font-semibold">
+        {frontmatter.title}
+      </h1>
+      <div class="text-neutral-100/70">
+        {frontmatter.description}
+      </div>
+
+      <div class="flex justify-between pt-4 text-gray-500 text-sm">
+        <p>{formatDate(new Date(frontmatter.pubDate))}</p>
+        <p>{frontmatter.minutesRead}</p>
+      </div>
+      <img src={frontmatter.image} alt="" />
+    </div>
+    <article class="prose prose-p:text-purple-500 prose-slate prose-invert">
+      <slot />
+    </article>
+  </main>
+</BasicLayout>

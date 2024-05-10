@@ -1,4 +1,3 @@
-// uno.config.ts
 import { defineConfig, presetUno, presetWebFonts } from "unocss";
 
 export default defineConfig({
@@ -38,11 +37,11 @@ export default defineConfig({
         200: "#262626",
         300: "#202020",
         400: "#1A1A1A",
-        500: "#171717" /* Exactly your example for the background */,
+        500: "#171717",
         600: "#141414",
         700: "#111111",
         800: "#0E0E0E",
-        900: "#0B0B0B" /* Deeper and darker */,
+        900: "#0B0B0B",
       },
       primary: {
         100: "#F9CDD3",
@@ -67,4 +66,12 @@ export default defineConfig({
       },
     }),
   ],
+  rules: [
+    ['hide-scrollbar', {
+      css: `::-webkit-scrollbar { display: none; }
+            scrollbar-width: none;
+            ::-ms-scrollbar { display: none; }`
+    }]
+  ],
 });
+ 

@@ -1,13 +1,30 @@
 ---
 import Card from "./Card/index.astro";
 import Pulse from "./Pulse.astro";
+import { getCollection } from "astro:content";
+
+// Fetch and filter posts that are in the 'now' category
+const allPosts = await getCollection("posts");
+const nowPosts = allPosts.filter((post) => post.data.category === "now");
+
+// Sort these posts by date in descending order
+nowPosts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+console.log(nowPosts);
+
+// Take the first item from the sorted array as the most recent post
+const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallback if no posts are found
+console.log(mostRecentNowPost);
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
   <div class="">
     <div class="flex justify-between w-full items-start mb-2">
       <div class="flex flex-col">
-        <h1 class="text-white text-xl f-bold">Now</h1>
+        <a href="/now" class="text-white text-xl f-bold">Now</a>
         <a href="https://sive.rs/nowff" target="_blank">
           <span
             class="hover:text-purple-500 text-sm text-gray-500 cursor-pointer"
@@ -17,6 +34,21 @@ import Pulse from "./Pulse.astro";
       </div>
       <Pulse />
     </div>
-    <div class="">Currently working as a freelance AI developer.</div>
+    <div class="line-clamp-3">
+      {
+        mostRecentNowPost ? (
+          <a
+            href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.slug || "#default"}`}
+            target=""
+            rel="noopener noreferrer"
+            class="text-neutral-100 text-sm f-bold"
+          >
+            {mostRecentNowPost.data.description}
+          </a>
+        ) : (
+          <p>No recent posts in 'Now' category.</p>
+        )
+      }
+    </div>
   </div>
 </Card>
