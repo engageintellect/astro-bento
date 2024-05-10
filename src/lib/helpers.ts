@@ -46,3 +46,11 @@ export function formatDate(date: Date): string {
     day: "numeric",
   });
 }
+
+
+export function formatTag(tag: string) {
+  return tag
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]/g, "");
+}

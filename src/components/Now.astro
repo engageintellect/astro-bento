@@ -13,11 +13,8 @@ nowPosts.sort(
     new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
 );
 
-console.log(nowPosts);
-
 // Take the first item from the sorted array as the most recent post
 const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallback if no posts are found
-console.log(mostRecentNowPost);
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-2">

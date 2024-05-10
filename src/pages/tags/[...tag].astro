@@ -1,0 +1,155 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { formatTag } from "../../lib/helpers";
+import "../../styles/global.css";
+import TagsLayout from "../../layouts/TagsLayout.astro";
+import PostItem from "../../components/Post/PostItem.astro";
+import { Icon } from "astro-icon/components";
+
+interface Post {
+  slug: string;
+  data: {
+    title: string;
+    description: string;
+    category: string;
+    pubDate: string;
+    tags: string[];
+  };
+}
+
+type TagRoute = {
+  params: {
+    tag: string;
+  };
+};
+
+export async function getStaticPaths(): Promise<TagRoute[]> {
+  const posts = await getCollection("posts");
+  const tagSet = new Set<string>();
+
+  // Extract and process tags
+  posts.forEach((post) => {
+    if (Array.isArray(post.data.tags)) {
+      post.data.tags.forEach((tag: string) => {
+        const lowercaseTag = tag.toLowerCase();
+        const urlTag = formatTag(lowercaseTag);
+        tagSet.add(urlTag);
+      });
+    }
+  });
+
+  // Convert tagSet to an array of tag objects
+  const tagRoutes: TagRoute[] = Array.from(tagSet).map((tag) => ({
+    params: { tag },
+  }));
+
+  return tagRoutes;
+}
+
+const tagParam: string = Astro.params.tag || ""; // Assuming tagParam is a string
+const allPosts: CollectionEntry<"posts">[] = await getCollection("posts");
+
+const pageObjects: Post[] = [];
+
+for (const post of allPosts) {
+  const tags = post.data.tags;
+
+  // Check if tags is an array and process each tag
+  if (Array.isArray(tags)) {
+    const processedTags = tags.map((tag) => formatTag(tag));
+
+    // Check if any of the processed tags match tagParam
+    if (processedTags.includes(formatTag(tagParam))) {
+      const postTitle = String(post.data.title);
+      const postSlug = formatTag(postTitle);
+      const postCategory = String(post.data.category);
+      const postDescription = String(post.data.description);
+      const postPubDate = String(post.data.pubDate);
+
+      // Create a newPost object conforming to the Post type
+      const newPost: Post = {
+        slug: postSlug,
+        data: {
+          title: postTitle,
+          description: postDescription,
+          category: postCategory,
+          pubDate: postPubDate,
+          tags: tags,
+        },
+      };
+
+      pageObjects.push(newPost);
+    }
+  }
+}
+
+// After populating the pageObjects array, sort it in reverse chronological order
+pageObjects.sort((a, b) => {
+  // Assuming pubDate is in a format that can be directly compared, e.g., 'YYYY-MM-DD'
+  // For other formats, you might need to parse them into Date objects first
+  return (
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+});
+
+let search: string = "";
+let filteredPosts: Post[] = pageObjects; // This now starts off in reverse chronological order
+
+function handleSearch(event: Event) {
+  const inputElement = event.target as HTMLInputElement;
+  search = inputElement.value.toLowerCase();
+
+  // Filter posts based on the search term, already in reverse chronological order
+  filteredPosts = pageObjects.filter((post) =>
+    post.data.title.toLowerCase().includes(search)
+  );
+}
+const Content = filteredPosts.map((post) => post);
+---
+
+<TagsLayout title="hi" description="hi" />
+
+<div
+  class="w-screen h-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
+>
+  <a
+    href="javascript:history.back()"
+    class="text-neutral-100 group border border-gray-500 px-4 py-2 mb-5 rounded"
+  >
+    <div class="flex items-center gap-2">
+      <Icon
+        name="mdi:arrow-left"
+        class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200 ease-in-out"
+      />
+      <div>back</div>
+    </div>
+  </a>
+
+  <h1 class="text-5xl f-bold mb-2 text-neutral-100">
+    <span class="f-light">tag:</span>
+    {tagParam.toLowerCase()}
+  </h1>
+  <div class="f-light mb-4 text-neutral-100/50">
+    Other posts tagged with "{tagParam}".
+  </div>
+  <div class="w-full">
+    <ul class="">
+      {
+        Content.map((post) => (
+          <>
+            <PostItem
+              title={post.data.title || "No title"}
+              description={post.data.description || "No description"}
+              date={
+                post.data.pubDate ? new Date(post.data.pubDate) : new Date()
+              }
+              url={post.slug}
+              category={post.data.category || "No category"}
+              tags={post.data.tags || []}
+            />
+          </>
+        ))
+      }
+    </ul>
+  </div>
+</div>

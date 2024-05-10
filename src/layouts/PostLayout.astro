@@ -61,9 +61,12 @@ const { frontmatter } = Astro.props;
       <div class="flex gap-1 w-full overflow-scroll">
         {
           frontmatter.tags.map((tag) => (
-            <div class="text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap">
+            <a
+              href={`/tags/${tag}`}
+              class="text-sm hover:no-underline no-underline bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
+            >
               #{tag}
-            </div>
+            </a>
           ))
         }
       </div>

@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PostItem from "../../components/Post/PostItem.astro";
+import "../../styles/global.css";
+import { Icon } from "astro-icon/components";
+
+const posts = (await getCollection("posts"))?.sort(
+  (blogEntryA, blogEntryB) =>
+    (blogEntryB.data.pubDate || new Date()).getTime() -
+    (blogEntryA.data.pubDate || new Date()).getTime()
+);
+---
+
+<script>
+  import { timeline, type TimelineDefinition } from "motion";
+  import { loaderAnimation } from "../../lib/constants";
+
+  const sequence = [loaderAnimation];
+
+  timeline(sequence as TimelineDefinition);
+</script>
+
+<Layout
+  title="Josh Chadwick - Blog"
+  description="Software developer with strong focus on the user experience animations and micro interactions"
+>
+  <div
+    class="w-screen h-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
+  >
+    <a
+      href="javascript:history.back()"
+      class="text-neutral-100 group border border-gray-500 px-4 py-2 mb-5 rounded"
+    >
+      <div class="flex items-center gap-2">
+        <Icon
+          name="mdi:arrow-left"
+          class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200 ease-in-out"
+        />
+        <div>back</div>
+      </div>
+    </a>
+
+    <div class="h-full"></div>
+
+    <h1 class="text-5xl f-bold mb-2 text-neutral-100">Now</h1>
+    <div class="f-light mb-4 text-neutral-100/50">
+      What I am currently working on, as well as articles and ideas.
+    </div>
+    <div class="w-full">
+      <ul class="">
+        {
+          posts
+            ?.filter((post) => post.data.category === "now")
+            .map((post) => (
+              <PostItem
+                title={post.data.title || "No title"}
+                description={post.data.description || "No description"}
+                date={post.data.pubDate || new Date()}
+                url={post.slug}
+                category={post.data.category || "No category"}
+                tags={post.data.tags || []}
+              />
+            ))
+        }
+      </ul>
+    </div>
+  </div>
+</Layout>
