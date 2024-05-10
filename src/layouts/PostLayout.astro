@@ -1,5 +1,5 @@
 ---
-import { formatDate } from "../lib/helpers";
+import { formatDate, formatTag } from "../lib/helpers";
 import type { MarkdownLayoutProps } from "astro";
 import BasicLayout from "./BasicLayout.astro";
 import { Icon } from "astro-icon/components";
@@ -24,7 +24,7 @@ const { frontmatter } = Astro.props;
   frontmatter={frontmatter}
   slug={slug}
   page="blog"
-  title={`Josh Chadwick - ${frontmatter.title}`}
+  title={`engage-bento - ${frontmatter.title}`}
   description={frontmatter.description}
 >
   <main class="mx-auto max-w-xl w-full h-screen p-2 md:py-5 text-neutral-100">
@@ -62,7 +62,7 @@ const { frontmatter } = Astro.props;
         {
           frontmatter.tags.map((tag) => (
             <a
-              href={`/tags/${tag}`}
+              href={`/tags/${formatTag(tag)}`}
               class="text-sm hover:no-underline no-underline bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
             >
               #{tag}

@@ -107,7 +107,7 @@ function handleSearch(event: Event) {
 const Content = filteredPosts.map((post) => post);
 ---
 
-<TagsLayout title="hi" description="hi" />
+<TagsLayout title="engage-bento: tags" description="" />
 
 <div
   class="w-screen h-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
@@ -127,7 +127,7 @@ const Content = filteredPosts.map((post) => post);
 
   <h1 class="text-5xl f-bold mb-2 text-neutral-100">
     <span class="f-light">tag:</span>
-    {tagParam.toLowerCase()}
+    {formatTag(tagParam)}
   </h1>
   <div class="f-light mb-4 text-neutral-100/50">
     Other posts tagged with "{tagParam}".
