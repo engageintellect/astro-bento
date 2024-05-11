@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import PostFeedLayout from "../../layouts/PostFeedLayout.astro";
 import PostItem from "../../components/Post/PostItem.astro";
 import "../../styles/global.css";
 import { Icon } from "astro-icon/components";
@@ -21,23 +21,10 @@ const posts = (await getCollection("posts"))?.sort(
   timeline(sequence as TimelineDefinition);
 </script>
 
-<Layout title="engage-bento: tags" description="">
+<PostFeedLayout title="engage-bento: tags" description="">
   <div
-    class="w-screen h-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
+    class="w-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
   >
-    <a
-      href="javascript:history.back()"
-      class="text-neutral-100 group border border-gray-500 px-4 py-2 mb-5 rounded"
-    >
-      <div class="flex items-center gap-2">
-        <Icon
-          name="mdi:arrow-left"
-          class="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200 ease-in-out"
-        />
-        <div>back</div>
-      </div>
-    </a>
-
     <div class="h-full"></div>
 
     <h1 class="text-5xl f-bold mb-2 text-neutral-100">Tags</h1>
@@ -61,4 +48,4 @@ const posts = (await getCollection("posts"))?.sort(
       </ul>
     </div>
   </div>
-</Layout>
+</PostFeedLayout>
