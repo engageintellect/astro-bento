@@ -24,7 +24,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
         <a href="/now" class="text-white text-xl f-bold">Now</a>
         <a href="https://sive.rs/nowff" target="_blank">
           <span
-            class="hover:text-purple-500 text-sm text-gray-500 cursor-pointer"
+            class="hover:text-purple-500 text-sm text-neutral-100/50 cursor-pointer"
             >what is this?</span
           >
         </a>
@@ -40,7 +40,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
             href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.slug || "#default"}`}
             target=""
             rel="noopener noreferrer"
-            class="text-neutral-100 text-sm f-light md:group-hover:text-neutral-100/70 transition-colors duration-300"
+            class="text-neutral-100/70 text-sm f-light md:group-hover:text-neutral-100 transition-colors duration-300"
           >
             "{mostRecentNowPost.data.description}"
           </a>
