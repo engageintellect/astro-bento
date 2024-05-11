@@ -39,7 +39,12 @@ const { frontmatter } = Astro.props;
       {frontmatter.category}
     </div>
     <div class="border-t border-gray-500">
-      <div class="text-5xl f-bold mt-5">
+      <div class="flex justify-between mt-2 text-gray-500 text-sm">
+        <p>{formatDate(new Date(frontmatter.pubDate))}</p>
+        <p>{frontmatter.minutesRead}</p>
+      </div>
+
+      <div class="text-5xl f-bold mt-2">
         {frontmatter.title}
       </div>
       <div class="text-neutral-100/70">
@@ -48,22 +53,17 @@ const { frontmatter } = Astro.props;
 
       <div class="mt-5 text-neutral-100/70 f-light text-sm">Technologies:</div>
 
-      <div class="flex gap-1 w-full overflow-scroll">
+      <div class="flex gap-1 w-full overflow-scroll mb-2">
         {
           frontmatter.tags.map((tag) => (
             <a
               href={`/tags/${formatTag(tag)}`}
-              class="text-sm hover:no-underline no-underline bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
+              class="no-underline hover:no-underline text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
             >
               #{tag}
             </a>
           ))
         }
-      </div>
-
-      <div class="flex justify-between mt-5 text-gray-500 text-sm">
-        <p>{formatDate(new Date(frontmatter.pubDate))}</p>
-        <p>{frontmatter.minutesRead}</p>
       </div>
 
       <a href={frontmatter.projectURL || ""}>
