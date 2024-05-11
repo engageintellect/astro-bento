@@ -19,13 +19,21 @@ const { title, description, date, url, category, tags } = Astro.props;
     class="text-sm md:text-base decoration-none flex flex-col justify-between text-neutral-100 ease-in-out transition-colors border-gray-700 hover:border-gray-500 border my-2 p-4 rounded"
   >
     <a href={`/${category}/${url}`}>
-      <time
-        class="text-xs text-neutral-100/70"
-        datetime={date.toISOString()}
-        data-date={date.toISOString()}
-      >
-        {formatDate(date)}
-      </time>
+      <div class="flex items-center justify-between">
+        <time
+          class="text-xs text-neutral-100/70"
+          datetime={date.toISOString()}
+          data-date={date.toISOString()}
+        >
+          {formatDate(date)}
+        </time>
+
+        <div
+          class="border border-gray-500 py-1 px-2 rounded capitalize text-xs text-neutral-100/70"
+        >
+          {category}
+        </div>
+      </div>
 
       <div class="flex flex-col py-2">
         <div class="inline-block f-bold text-2xl">
