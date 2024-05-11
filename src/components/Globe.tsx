@@ -47,7 +47,7 @@ const GlobeComponent = () => {
 
     svg
       .append("circle")
-      .attr("fill", "#505050")
+      .attr("fill", "#A3A3A3")
       .attr("stroke", "#000")
       .attr("stroke-width", "0.2")
       .attr("cx", width / 2)
@@ -80,8 +80,12 @@ const GlobeComponent = () => {
   });
 
   return (
-    <div class="flex flex-col text-white justify-center items-center w-full h-full">
-      <div class="w-full" ref={mapContainer}></div>
+    <div class="flex mt-20 flex-col text-white justify-center items-center w-full h-full">
+      <div class="w-full max-w-sm text-xl">
+        <p>"Not all those who wander are lost."</p>
+        <p class="text-right">– J.R.R. Tolkien</p>
+      </div>
+      <div class="w-full mt-5" ref={mapContainer}></div>
     </div>
   );
 };

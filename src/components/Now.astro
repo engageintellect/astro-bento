@@ -40,7 +40,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
             href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.slug || "#default"}`}
             target=""
             rel="noopener noreferrer"
-            class="text-neutral-100 text-sm"
+            class="text-neutral-100 text-sm md:group-hover:text-neutral-100/70 transition-colors duration-300"
           >
             "{mostRecentNowPost.data.description}"
           </a>
