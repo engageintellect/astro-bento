@@ -16,6 +16,7 @@ tags:
   - Finance
   - Uvicorn
   - Nginx
+  - Linux
   - Ubuntu
   - Vercel
 projectURL: "https://wally-btc.vercel.app"

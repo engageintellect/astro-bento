@@ -8,6 +8,7 @@ category: projects
 image: "/images/linktreez.png"
 tags:
   - Next.js
+  - React.js
   - TailwindCSS
   - Vercel
 projectURL: "https://linktreez.vercel.app"

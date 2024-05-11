@@ -3,6 +3,7 @@ import { formatDate, formatTag } from "../lib/helpers";
 import type { MarkdownLayoutProps } from "astro";
 import BasicLayout from "./BasicLayout.astro";
 import { Icon } from "astro-icon/components";
+import Navbar from "../components/Navbar.astro";
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -27,46 +28,7 @@ const { frontmatter } = Astro.props;
   title={`engage-bento - ${frontmatter.title}`}
   description={frontmatter.description}
 >
-  <div class="sticky top-0 w-full max-w-xl mx-auto px-2 bg-darkslate-700">
-    <div class="mx-auto">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-2">
-          <a
-            href="/"
-            class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
-          >
-            <Icon name="mdi:home" class="w-5 h-5 inline-block" />
-          </a>
-          <a
-            href="/projects"
-            class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
-          >
-            <Icon name="material-symbols:code" class="w-5 h-5 inline-block" />
-          </a>
-
-          <a
-            href="/now"
-            class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
-          >
-            <Icon name="carbon:blog" class="w-5 h-5 inline-block" />
-          </a>
-        </div>
-
-        <div class="text-lg font-bold text-neutral-100 p-4">
-          <a
-            href="javascript:history.back()"
-            class="flex items-center gap-1 group text-neutral-100 no-underline hover:no-underline hover:text-neutral-200 transition-all duration-300"
-          >
-            <Icon
-              name="mdi:arrow-left"
-              class="w-5 h-5 inline-block md:group-hover:-translate-x-1 transition-all duration-300"
-            />
-            <div>back</div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <Navbar />
 
   <main class="mx-auto max-w-xl w-full p-2 md:py-5 text-neutral-100">
     <!-- <hr class="border-[.5px] border-gray-100/10 mb-5" /> -->

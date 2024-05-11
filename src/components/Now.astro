@@ -18,7 +18,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
 ---
 
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
-  <div class="">
+  <div class="group">
     <div class="flex justify-between w-full items-start mb-2">
       <div class="flex flex-col">
         <a href="/now" class="text-white text-xl f-bold">Now</a>
@@ -29,7 +29,9 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
           >
         </a>
       </div>
-      <Pulse />
+      <div class="md:group-hover:scale-150 transition-all duration-300">
+        <Pulse />
+      </div>
     </div>
     <div class="line-clamp-3">
       {
@@ -38,9 +40,9 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
             href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.slug || "#default"}`}
             target=""
             rel="noopener noreferrer"
-            class="text-neutral-100 text-sm f-bold"
+            class="text-neutral-100 text-sm"
           >
-            {mostRecentNowPost.data.description}
+            "{mostRecentNowPost.data.description}"
           </a>
         ) : (
           <p>No recent posts in 'Now' category.</p>

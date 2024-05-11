@@ -13,6 +13,7 @@ tags:
   - Python
   - API
   - WebSockets
+  - Linux
   - Ubuntu
   - Nginx
   - Vercel

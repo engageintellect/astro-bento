@@ -14,6 +14,7 @@ tags:
   - Docker
   - Nginx
   - Pocketbase
+  - Linux
   - Ubuntu
 
 projectURL: "https://pi.engage-dev.com"

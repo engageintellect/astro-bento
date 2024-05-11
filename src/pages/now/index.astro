@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import PostFeedLayout from "../../layouts/PostFeedLayout.astro";
 import PostItem from "../../components/Post/PostItem.astro";
 import "../../styles/global.css";
-import { Icon } from "astro-icon/components";
 
 const posts = (await getCollection("posts"))?.sort(
   (blogEntryA, blogEntryB) =>
@@ -21,13 +20,15 @@ const posts = (await getCollection("posts"))?.sort(
   timeline(sequence as TimelineDefinition);
 </script>
 
-<PostFeedLayout title="engage-bento: now" description="">
+<PostFeedLayout title="engage-bento: projects" description="">
   <div
     class="w-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
   >
+    <div class="h-full"></div>
+
     <h1 class="text-5xl f-bold mb-2 text-neutral-100">Now</h1>
     <div class="f-light mb-4 text-neutral-100/50">
-      What I am currently working on, as well as articles and ideas.
+      What I'm working on right now. Ideas, notes, and ramblings.
     </div>
     <div class="w-full">
       <ul class="">

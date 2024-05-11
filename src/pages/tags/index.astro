@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import PostFeedLayout from "../../layouts/PostFeedLayout.astro";
 import PostItem from "../../components/Post/PostItem.astro";
 import "../../styles/global.css";
-import { Icon } from "astro-icon/components";
 
 const posts = (await getCollection("posts"))?.sort(
   (blogEntryA, blogEntryB) =>

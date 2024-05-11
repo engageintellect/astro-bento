@@ -14,6 +14,7 @@ tags:
   - Zod
   - OpenAI
   - Vercel AI SDK
+  - Linux
   - Ubuntu
 projectURL: "https://spatz.engage-dev.com"
 repoURL: "https://github.com/engageintellect/spatz"

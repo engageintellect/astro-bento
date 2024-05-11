@@ -11,6 +11,7 @@ tags:
   - TailwindCSS
   - Python
   - Vercel AI SDK
+  - Linux
   - Ubuntu
   - Robotics
   - API

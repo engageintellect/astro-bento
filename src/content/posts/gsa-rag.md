@@ -16,6 +16,7 @@ tags:
   - PineconeDB
   - FastAPI
   - AI
+  - Linux
   - Ubuntu
   - Nginx
   - Vercel

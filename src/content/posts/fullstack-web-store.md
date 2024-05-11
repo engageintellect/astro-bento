@@ -15,6 +15,7 @@ tags:
   - Pocketbase
   - SQLite
   - Nginx
+  - Linux
   - Ubuntu
 
 projectURL: "https://shopgme.com"

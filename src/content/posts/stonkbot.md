@@ -16,6 +16,7 @@ tags:
   - FastAPI
   - AI
   - Finance
+  - Linux
   - Ubuntu
   - Nginx
   - Vercel

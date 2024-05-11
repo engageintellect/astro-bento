@@ -9,6 +9,7 @@ image: "https://i.guim.co.uk/img/media/6bc60b720f2288e8b8153dc04e8b079b4a7a9dd6/
 tags:
   - Next.js
   - Typescript
+  - Node.js
   - OpenAI
   - ChatGPT
   - TailwindCSS

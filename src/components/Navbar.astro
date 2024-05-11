@@ -1,0 +1,50 @@
+---
+// interface Props {
+//   rounded?: boolean;
+// }
+
+// const { rounded } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<div class="sticky top-0 w-full max-w-xl mx-auto px-2 bg-darkslate-700">
+  <div class="mx-auto">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <a
+          href="/"
+          class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
+        >
+          <Icon name="mdi:home" class="w-5 h-5 inline-block" />
+        </a>
+
+        <a
+          href="/now"
+          class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
+        >
+          <Icon name="carbon:blog" class="w-5 h-5 inline-block" />
+        </a>
+
+        <a
+          href="/projects"
+          class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
+        >
+          <Icon name="material-symbols:code" class="w-5 h-5 inline-block" />
+        </a>
+      </div>
+
+      <div class="p-4">
+        <a
+          href="javascript:history.back()"
+          class="text-lg flex items-center gap-1 group text-neutral-100 no-underline hover:no-underline hover:text-neutral-200 transition-all duration-300"
+        >
+          <Icon
+            name="mdi:arrow-left"
+            class="w-5 h-5 inline-block md:group-hover:-translate-x-1 transition-all duration-300"
+          />
+          <div>back</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

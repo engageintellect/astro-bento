@@ -8,6 +8,7 @@ category: now
 image: "/images/pocketbase.png"
 tags:
   - Pocketbase
+  - Linux
   - Ubuntu
   - Server
   - Linux
