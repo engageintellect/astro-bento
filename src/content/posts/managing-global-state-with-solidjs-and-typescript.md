@@ -8,7 +8,8 @@ category: now
 image: /images/solid.png
 tags:
   - SolidJS
-  - TypeSript
+  - TypeScript
+  - Vercel
 ---
 
 # Introduction:
