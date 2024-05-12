@@ -51,7 +51,7 @@ import { slide, fade } from "astro:transitions";
         </a>
       </div>
 
-      <div class="p-4">
+      <div class="p-4 invisible">
         <a
           href="javascript:history.back()"
           class="text-lg flex items-center gap-1 group text-neutral-100 no-underline hover:no-underline hover:text-neutral-200 transition-all duration-300"
@@ -62,6 +62,20 @@ import { slide, fade } from "astro:transitions";
             class="w-5 h-5 inline-block md:group-hover:-translate-x-1 transition-all duration-300"
           />
           <div transition:animate={fade({ duration: ".25s" })}>back</div>
+        </a>
+      </div>
+
+      <div class="p-4">
+        <a
+          href="javascript:history.back()"
+          class="text-lg flex items-center gap-1 group text-neutral-100 no-underline hover:no-underline hover:text-neutral-200 transition-all duration-300"
+        >
+          <Icon
+            transition:animate={slide({ duration: ".25s" })}
+            name="mdi:arrow-left"
+            class="w-5 h-5 inline-block md:group-hover:-translate-x-1 transition-all duration-300"
+          />
+          <div transition:animate={slide({ duration: ".25s" })}>back</div>
         </a>
       </div>
     </div>
