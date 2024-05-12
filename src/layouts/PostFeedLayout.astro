@@ -1,7 +1,7 @@
 ---
 import BasicLayout from "./BasicLayout.astro";
 import Navbar from "../components/Navbar.astro";
-import { ViewTransitions } from "astro:transitions";
+import { fade, ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -17,15 +17,17 @@ const { title, description, page, fullScreen } = Astro.props;
   <ViewTransitions />
 </head>
 
-<BasicLayout title={title} description={description}>
-  <div
-    slot=""
-    class="bg-darkslate-700 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"
-  >
-  </div>
-  <Navbar />
+<div transition:animate="none">
+  <BasicLayout title={title} description={description}>
+    <div
+      slot=""
+      class="bg-darkslate-700 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"
+    >
+    </div>
+    <Navbar />
 
-  <div class="h-full">
-    <slot />
-  </div>
-</BasicLayout>
+    <div transition:animate={fade({ duration: ".25s" })} class="h-full">
+      <slot />
+    </div>
+  </BasicLayout>
+</div>

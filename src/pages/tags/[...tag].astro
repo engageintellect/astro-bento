@@ -5,6 +5,7 @@ import "../../styles/global.css";
 import TagsLayout from "../../layouts/TagsLayout.astro";
 import PostItem from "../../components/Post/PostItem.astro";
 import Navbar from "../../components/Navbar.astro";
+import { fade } from "astro:transitions";
 
 interface Post {
   slug: string;
@@ -107,38 +108,40 @@ function handleSearch(event: Event) {
 const Content = filteredPosts.map((post) => post);
 ---
 
-<TagsLayout title="engage-bento: tags" description="" />
+<div transition:animate="none">
+  <TagsLayout title="engage-bento: tags" description="" />
 
-<Navbar />
+  <Navbar />
 
-<div
-  class="w-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
->
-  <h1 class="text-5xl f-bold mb-2 text-neutral-100">
-    <span class="f-light text-neutral-100/70">tag:</span>
-    {formatTag(tagParam)}
-  </h1>
-  <div class="f-light mb-4 text-neutral-100/50">
-    Other posts tagged with "{tagParam}".
-  </div>
-  <div class="w-full">
-    <ul class="">
-      {
-        Content.map((post) => (
-          <>
-            <PostItem
-              title={post.data.title || "No title"}
-              description={post.data.description || "No description"}
-              date={
-                post.data.pubDate ? new Date(post.data.pubDate) : new Date()
-              }
-              url={post.slug}
-              category={post.data.category || "No category"}
-              tags={post.data.tags || []}
-            />
-          </>
-        ))
-      }
-    </ul>
+  <div
+    class="w-screen h-full flex flex-col justify-start items-start max-w-xl mx-auto p-2 md:py-5"
+  >
+    <h1 class="text-5xl f-bold mb-2 text-neutral-100">
+      <span class="f-light text-neutral-100/70">tag:</span>
+      #{formatTag(tagParam)}
+    </h1>
+    <div class="f-light mb-4 text-neutral-100/50">
+      Other posts tagged with "{tagParam}".
+    </div>
+    <div class="w-full">
+      <ul transition:animate={fade({ duration: ".25s" })} class="">
+        {
+          Content.map((post) => (
+            <>
+              <PostItem
+                title={post.data.title || "No title"}
+                description={post.data.description || "No description"}
+                date={
+                  post.data.pubDate ? new Date(post.data.pubDate) : new Date()
+                }
+                url={post.slug}
+                category={post.data.category || "No category"}
+                tags={post.data.tags || []}
+              />
+            </>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 </div>

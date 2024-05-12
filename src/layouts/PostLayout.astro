@@ -49,19 +49,22 @@ const { frontmatter } = Astro.props;
       </div>
 
       <div
-        transition:animate={fade({ duration: ".5s" })}
+        transition:animate={fade({ duration: ".25s" })}
         class="text-5xl f-bold mt-2"
       >
         {frontmatter.title}
       </div>
-      <div class="text-neutral-100/70">
+      <div
+        transition:animate={fade({ duration: ".25s" })}
+        class="text-neutral-100/70"
+      >
         {frontmatter.description}
       </div>
 
       <div class="mt-5 text-neutral-100/70 f-light text-sm">Technologies:</div>
 
       <div
-        transition:animate={fade({ duration: ".75s" })}
+        transition:animate={fade({ duration: ".5s" })}
         class="flex gap-1 w-full overflow-scroll mb-2"
       >
         {
@@ -78,7 +81,7 @@ const { frontmatter } = Astro.props;
 
       <a href={frontmatter.projectURL || ""}>
         <img
-          transition:animate={fade({ duration: ".5s" })}
+          transition:animate={fade({ duration: ".75s" })}
           src={frontmatter.image}
           alt=""
           class="border border-gray-500/50 w-full object-cover h-64"
@@ -86,7 +89,10 @@ const { frontmatter } = Astro.props;
       </a>
     </div>
 
-    <div class="flex items-center gap-2 mt-2">
+    <div
+      transition:animate={fade({ duration: "1.25s" })}
+      class="flex items-center gap-2 mt-2"
+    >
       {
         frontmatter.projectURL && (
           <a href={frontmatter.projectURL}>
@@ -108,7 +114,7 @@ const { frontmatter } = Astro.props;
     </div>
 
     <article
-      transition:animate={fade({ duration: "1s" })}
+      transition:animate={fade({ duration: "2s" })}
       class="prose prose-p:text-purple-500 prose-slate prose-invert"
     >
       <slot />
