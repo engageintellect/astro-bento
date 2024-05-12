@@ -75,21 +75,33 @@ const { frontmatter } = Astro.props;
       </a>
     </div>
 
-    <div class="flex items-center gap-2 mt-2">
+    <div class="flex items-center gap-2 mt-2 w-full">
       {
         frontmatter.projectURL && (
-          <a href={frontmatter.projectURL}>
-            <button class="text-white border rounded py-2 px-4 border-gray-500">
-              Go to App
+          <a href={frontmatter.projectURL} class="w-full group">
+            <button class="text-neutral-100 bg-gray-700 md:hover:text-neutral-100 transition-all duration-200 rounded py-2 px-4 flex-1 w-full">
+              <div class="flex items-center justify-between gap-2">
+                <div>Go to App</div>
+                <Icon
+                  name="mdi:login"
+                  class="w-5 h-5 md:group-hover:scale-110 transition-all duration-100"
+                />
+              </div>
             </button>
           </a>
         )
       }
       {
         frontmatter.repoURL && (
-          <a href={frontmatter.repoURL}>
-            <button class="text-white border rounded py-2 px-4 border-gray-500">
-              Repository
+          <a href={frontmatter.repoURL} class="w-full group">
+            <button class="text-neutral-100 bg-gray-700 md:hover:text-neutral-100 transition-all duration-200 rounded py-2 px-4 flex-1 w-full">
+              <div class="flex items-center justify-between gap-2">
+                <div>Repository</div>
+                <Icon
+                  name="mdi:github"
+                  class="w-5 h-5 md:group-hover:scale-110 transition-all duration-100"
+                />
+              </div>
             </button>
           </a>
         )

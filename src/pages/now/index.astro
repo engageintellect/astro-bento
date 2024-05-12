@@ -43,6 +43,7 @@ const posts = (await getCollection("posts"))?.sort(
                 url={post.slug}
                 category={post.data.category || "No category"}
                 tags={post.data.tags || []}
+                image={post.data.image || ""}
               />
             ))
         }

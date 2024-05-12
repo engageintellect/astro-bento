@@ -14,6 +14,7 @@ interface Post {
     category: string;
     pubDate: string;
     tags: string[];
+    image: string;
   };
 }
 
@@ -65,6 +66,7 @@ for (const post of allPosts) {
       const postCategory = String(post.data.category);
       const postDescription = String(post.data.description);
       const postPubDate = String(post.data.pubDate);
+      const postImage = String(post.data.image);
 
       // Create a newPost object conforming to the Post type
       const newPost: Post = {
@@ -75,6 +77,7 @@ for (const post of allPosts) {
           category: postCategory,
           pubDate: postPubDate,
           tags: tags,
+          image: postImage,
         },
       };
 
@@ -136,6 +139,7 @@ const Content = filteredPosts.map((post) => post);
                 url={post.slug}
                 category={post.data.category || "No category"}
                 tags={post.data.tags || []}
+                image={post.data.image || ""}
               />
             </>
           ))
