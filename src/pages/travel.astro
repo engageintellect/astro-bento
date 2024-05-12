@@ -2,6 +2,7 @@
 import Globe from "../components/Globe";
 import BasicLayout from "../layouts/BasicLayout.astro";
 import Navbar from "../components/Navbar.astro";
+import { fade } from "astro:transitions";
 ---
 
 <script>
@@ -42,7 +43,10 @@ import Navbar from "../components/Navbar.astro";
 >
   <Navbar />
 
-  <div class="w-full flex justify-center">
+  <div
+    transition:animate={fade({ duration: ".5s" })}
+    class="w-full flex justify-center"
+  >
     <Globe client:load />
   </div>
 </BasicLayout>

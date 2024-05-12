@@ -3,7 +3,7 @@ import { formatDate, formatTag } from "../lib/helpers";
 import type { MarkdownLayoutProps } from "astro";
 import BasicLayout from "./BasicLayout.astro";
 import { Icon } from "astro-icon/components";
-import Navbar from "../components/Navbar.astro";
+import NavbarBack from "../components/NavbarBack.astro";
 import { fade, slide } from "astro:transitions";
 
 type Props = MarkdownLayoutProps<{
@@ -29,7 +29,7 @@ const { frontmatter } = Astro.props;
   title={`engage-bento - ${frontmatter.title}`}
   description={frontmatter.description}
 >
-  <Navbar />
+  <NavbarBack />
 
   <main
     transition:name="pageFade"

@@ -54,3 +54,19 @@ export function formatTag(tag: string) {
     .replace(/\s+/g, "-")
     .replace(/[^\w-]/g, "");
 }
+
+
+
+export function customBack() {
+  const homePage = "/";
+  const previousURL = document.referrer;
+
+  if (previousURL.includes(homePage)) {
+      window.location.href = homePage;
+  } else {
+      history.back();
+  }
+}
+
+// Make sure to expose this function globally if it's being called directly in inline event handlers
+// window.customBack = customBack;

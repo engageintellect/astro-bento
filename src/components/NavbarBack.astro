@@ -5,6 +5,7 @@
 
 // const { rounded } = Astro.props;
 import { Icon } from "astro-icon/components";
+import { slide } from "astro:transitions";
 ---
 
 <script>
@@ -30,39 +31,31 @@ import { Icon } from "astro-icon/components";
       <div class="flex items-center gap-2">
         <a
           href="javascript:window.location.href='/'"
-          class="group py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
+          class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
         >
-          <Icon
-            name="mdi:home"
-            class="w-5 h-5 inline-block md:group-hover:scale-110 transition-all duration-100"
-          />
+          <Icon name="mdi:home" class="w-5 h-5 inline-block" />
         </a>
 
         <a
           href="/now"
-          class="group py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
+          class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
         >
-          <Icon
-            name="carbon:blog"
-            class="w-5 h-5 inline-block md:group-hover:scale-110 transition-all duration-100"
-          />
+          <Icon name="carbon:blog" class="w-5 h-5 inline-block" />
         </a>
 
         <a
           href="/projects"
-          class="group py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
+          class="py-2 flex items-center justify-center px-4 border border-gray-500 rounded text-neutral-100"
         >
-          <Icon
-            name="material-symbols:code"
-            class="w-5 h-5 inline-block md:group-hover:scale-110 transition-all duration-100"
-          />
+          <Icon name="material-symbols:code" class="w-5 h-5 inline-block" />
         </a>
       </div>
 
-      <div class="p-4 invisible">
+      <div class="p-4">
         <a
+          transition:animate={slide({ duration: ".25s" })}
           href="javascript:history.back()"
-          class="hidden text-lg flex items-center gap-1 group text-neutral-100 no-underline hover:no-underline hover:text-neutral-200 transition-all duration-300"
+          class="text-lg flex items-center gap-1 group text-neutral-100 no-underline hover:no-underline hover:text-neutral-200 transition-all duration-300"
         >
           <Icon
             name="mdi:arrow-left"
