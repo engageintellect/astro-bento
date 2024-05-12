@@ -17,11 +17,11 @@ const { title, description, date, url, category, tags, image } = Astro.props;
 
 <li class="w-full">
   <div
-    class="text-sm md:text-base decoration-none flex flex-col justify-between text-neutral-100 ease-in-out transition-colors border-gray-700 hover:border-gray-500 border my-2 p-4 rounded"
+    class="text-sm md:text-base decoration-none flex flex-col justify-between text-neutral-100 ease-in-out transition-colors border-gray-700 hover:border-gray-500 border my-2 p-2 md:p-4 rounded-lg"
   >
     <div class="flex items-center justify-between">
       <div
-        class="border border-gray-500 px-2 rounded capitalize text-xs text-neutral-100/70"
+        class="border border-gray-500 px-2 rounded capitalize text-sm text-neutral-100/70"
       >
         {category}
       </div>
@@ -40,7 +40,7 @@ const { title, description, date, url, category, tags, image } = Astro.props;
       class="flex items-stretch gap-2 w-full h-full my-2"
     >
       <div
-        class="w-1/4 md:w-1/3 lg:w-1/2 flex border border-gray-500/50 rounded transition-all duration-300"
+        class="w-1/3 lg:w-1/2 flex border border-gray-500/50 rounded transition-all duration-300"
       >
         <!-- Flex for proper height management -->
         <img
@@ -50,7 +50,7 @@ const { title, description, date, url, category, tags, image } = Astro.props;
         />
       </div>
 
-      <div class="w-3/4">
+      <div class="w-2/3 lg:w-1/2">
         <div class="flex flex-col justify-start py-2 h-full w-full">
           <div class="inline-block f-bold text-2xl">
             {title}
