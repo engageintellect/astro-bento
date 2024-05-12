@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card/index.astro";
+import ProjectsCard from "../components/ProjectsCard.astro";
 import IntroCard from "../components/IntroCard.astro";
 import ContactsCard from "../components/ContactsCard.astro";
 import TimeZone from "../components/TimeZoneCard.astro";
 import AboutMe from "../components/AboutMe.astro";
-import Now from "../components/Now.astro";
+import NowCard from "../components/NowCard.astro";
 import Globe from "../components/Globe";
 ---
 
@@ -39,7 +40,7 @@ import Globe from "../components/Globe";
     <AboutMe />
     <ContactsCard />
     <TimeZone />
-    <Now />
+    <NowCard />
     <Card
       colSpan="md:col-span-1"
       rowSpan="md:row-span-1"
@@ -51,14 +52,16 @@ import Globe from "../components/Globe";
         <Globe client:load />
       </div>
     </Card>
-    <Card
+    <!-- <Card
       colSpan="md:col-span-1"
       rowSpan="md:row-span-2 flex gap-4"
       title="Projects"
       href="/projects"
     >
       <div class="text-neutral-100/70">Personal projects and experiments.</div>
-    </Card>
+    </Card> -->
+
+    <ProjectsCard />
     <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
       <p class="text-sm h-full w-full flex items-center sm:justify-center">
         © 2024 · <a href="https://github.com/engageintellect"

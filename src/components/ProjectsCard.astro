@@ -1,0 +1,66 @@
+---
+import Card from "./Card/index.astro";
+import Pulse from "./Pulse.astro";
+import { getCollection } from "astro:content";
+
+// Fetch and filter posts that are in the 'now' category
+const allPosts = await getCollection("posts");
+const nowPosts = allPosts.filter((post) => post.data.category === "projects");
+
+// Sort these posts by date in descending order
+nowPosts.sort(
+  (a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+
+// Take the first item from the sorted array as the most recent post
+const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallback if no posts are found
+---
+
+<Card
+  colSpan="md:col-span-1"
+  rowSpan="md:row-span-2"
+  title="Projects"
+  href="/projects"
+>
+  <div class="group">
+    <div class="flex justify-between w-full items-start mb-2">
+      <div class="flex flex-col">
+        <!-- <a href="/now" class="text-white text-xl f-bold">Projects</a> -->
+        <!-- <a href="https://sive.rs/nowff" target="_blank"> -->
+        <!-- <span
+            class="hover:text-purple-500 text-sm text-neutral-100/50 cursor-pointer"
+            >what is this?</span
+          > -->
+        <!-- </a> -->
+      </div>
+      <div class="md:group-hover:scale-150 transition-all duration-300">
+        <!-- <Pulse /> -->
+      </div>
+    </div>
+    <div class="line-clamp-4">
+      {
+        mostRecentNowPost ? (
+          <a
+            href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.slug || "#default"}`}
+            target=""
+            rel="noopener noreferrer"
+            class="text-neutral-100 md:text-neutral-100/70 text-sm f-light md:group-hover:text-neutral-100 transition-colors duration-300"
+          >
+            <div class="group/newPost">
+              <div class="f-bold text-lg text-neutral-100">
+                {mostRecentNowPost.data.title}
+              </div>
+
+              <div class="text-neutral-100/70 md:group-hover/newPost:text-neutral-100 md:group-hover/newPost:underline">
+                {mostRecentNowPost.data.description}"
+              </div>
+            </div>
+          </a>
+        ) : (
+          <p>No recent posts in 'Projects' category.</p>
+        )
+      }
+    </div>
+  </div>
+</Card>
