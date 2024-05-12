@@ -3,7 +3,7 @@ import { formatDate, formatTag } from "../lib/helpers";
 import type { MarkdownLayoutProps } from "astro";
 import BasicLayout from "./BasicLayout.astro";
 import { Icon } from "astro-icon/components";
-import NavbarBack from "../components/NavbarBack.astro";
+import Navbar from "../components/Navbar.astro";
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -28,7 +28,7 @@ const { frontmatter } = Astro.props;
   title={`engage-bento - ${frontmatter.title}`}
   description={frontmatter.description}
 >
-  <NavbarBack />
+  <Navbar />
 
   <main class="mx-auto max-w-xl w-full p-2 md:py-5 text-neutral-100">
     <!-- <hr class="border-[.5px] border-gray-100/10 mb-5" /> -->
