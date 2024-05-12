@@ -43,10 +43,7 @@ import { fade } from "astro:transitions";
 >
   <Navbar />
 
-  <div
-    transition:animate={fade({ duration: ".5s" })}
-    class="w-full flex justify-center"
-  >
+  <div class="w-full flex justify-center">
     <Globe client:load />
   </div>
 </BasicLayout>

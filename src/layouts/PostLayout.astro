@@ -4,7 +4,6 @@ import type { MarkdownLayoutProps } from "astro";
 import BasicLayout from "./BasicLayout.astro";
 import { Icon } from "astro-icon/components";
 import NavbarBack from "../components/NavbarBack.astro";
-import { fade, slide } from "astro:transitions";
 
 type Props = MarkdownLayoutProps<{
   title: string;
@@ -31,10 +30,7 @@ const { frontmatter } = Astro.props;
 >
   <NavbarBack />
 
-  <main
-    transition:name="pageFade"
-    class="mx-auto max-w-xl w-full p-2 md:py-5 text-neutral-100"
-  >
+  <main class="mx-auto max-w-xl w-full p-2 md:py-5 text-neutral-100">
     <!-- <hr class="border-[.5px] border-gray-100/10 mb-5" /> -->
 
     <div
@@ -48,25 +44,16 @@ const { frontmatter } = Astro.props;
         <p>{frontmatter.minutesRead}</p>
       </div>
 
-      <div
-        transition:animate={fade({ duration: ".25s" })}
-        class="text-5xl f-bold mt-2"
-      >
+      <div class="text-5xl f-bold mt-2">
         {frontmatter.title}
       </div>
-      <div
-        transition:animate={fade({ duration: ".25s" })}
-        class="text-neutral-100/70"
-      >
+      <div class="text-neutral-100/70">
         {frontmatter.description}
       </div>
 
       <div class="mt-5 text-neutral-100/70 f-light text-sm">Technologies:</div>
 
-      <div
-        transition:animate={fade({ duration: ".5s" })}
-        class="flex gap-1 w-full overflow-scroll mb-2"
-      >
+      <div class="flex gap-1 w-full overflow-scroll mb-2">
         {
           frontmatter.tags.map((tag) => (
             <a
@@ -81,7 +68,6 @@ const { frontmatter } = Astro.props;
 
       <a href={frontmatter.projectURL || ""}>
         <img
-          transition:animate={fade({ duration: ".75s" })}
           src={frontmatter.image}
           alt=""
           class="border border-gray-500/50 w-full object-cover h-64"
@@ -89,10 +75,7 @@ const { frontmatter } = Astro.props;
       </a>
     </div>
 
-    <div
-      transition:animate={fade({ duration: "1.25s" })}
-      class="flex items-center gap-2 mt-2"
-    >
+    <div class="flex items-center gap-2 mt-2">
       {
         frontmatter.projectURL && (
           <a href={frontmatter.projectURL}>
@@ -113,10 +96,7 @@ const { frontmatter } = Astro.props;
       }
     </div>
 
-    <article
-      transition:animate={fade({ duration: "2s" })}
-      class="prose prose-p:text-purple-500 prose-slate prose-invert"
-    >
+    <article class="prose prose-p:text-purple-500 prose-slate prose-invert">
       <slot />
     </article>
   </main>

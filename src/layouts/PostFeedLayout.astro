@@ -1,7 +1,6 @@
 ---
 import BasicLayout from "./BasicLayout.astro";
 import Navbar from "../components/Navbar.astro";
-import { fade, ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -13,11 +12,7 @@ interface Props {
 const { title, description, page, fullScreen } = Astro.props;
 ---
 
-<head>
-  <ViewTransitions />
-</head>
-
-<div transition:animate="none">
+<div>
   <BasicLayout title={title} description={description}>
     <div
       slot=""
@@ -26,7 +21,7 @@ const { title, description, page, fullScreen } = Astro.props;
     </div>
     <Navbar />
 
-    <div transition:animate={fade({ duration: ".25s" })} class="h-full">
+    <div class="h-full">
       <slot />
     </div>
   </BasicLayout>

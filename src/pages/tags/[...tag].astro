@@ -5,7 +5,6 @@ import "../../styles/global.css";
 import TagsLayout from "../../layouts/TagsLayout.astro";
 import PostItem from "../../components/Post/PostItem.astro";
 import Navbar from "../../components/Navbar.astro";
-import { fade } from "astro:transitions";
 
 interface Post {
   slug: string;
@@ -108,7 +107,7 @@ function handleSearch(event: Event) {
 const Content = filteredPosts.map((post) => post);
 ---
 
-<div transition:animate="none">
+<div>
   <TagsLayout title="engage-bento: tags" description="" />
 
   <Navbar />
@@ -124,7 +123,7 @@ const Content = filteredPosts.map((post) => post);
       Other posts tagged with "{tagParam}".
     </div>
     <div class="w-full">
-      <ul transition:animate={fade({ duration: ".25s" })} class="">
+      <ul class="">
         {
           Content.map((post) => (
             <>
