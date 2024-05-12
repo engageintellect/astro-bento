@@ -13,15 +13,6 @@ import TechCard from "./TechCard.astro";
 <div class="flex overflow-auto gap-2 py-5 snap-x snap-mandatory">
   <div class="w-full snap-center">
     <TechCard
-      title="Next.js"
-      description="A versatile React framework for building performant server-side rendered and statically generated web applications with seamless integration with popular web technologies."
-      iconName="cib:next-js"
-      cardUrl="/tags/nextjs"
-      tag="JS Framework"
-    />
-  </div>
-  <div class="w-full snap-center">
-    <TechCard
       title="Sveltekit"
       description="A lightweight and fast web framework for building server-rendered and static sites with Svelte, offering intuitive development and easy deployment."
       iconName="vscode-icons:file-type-svelte"
@@ -29,7 +20,15 @@ import TechCard from "./TechCard.astro";
       tag="Web"
     />
   </div>
-
+  <div class="w-full snap-center">
+    <TechCard
+      title="Next.js"
+      description="A versatile React framework for building performant server-side rendered and statically generated web applications with seamless integration with popular web technologies."
+      iconName="cib:next-js"
+      cardUrl="/tags/nextjs"
+      tag="JS Framework"
+    />
+  </div>
   <div class="w-full snap-center">
     <TechCard
       title="React"
