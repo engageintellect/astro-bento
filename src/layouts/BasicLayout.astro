@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 interface Props {
   title: string;
   description: string;
@@ -114,79 +115,79 @@ const schema =
       defer
       src="https://analytics.us.umami.is/script.js"
       data-website-id="bfea2621-8ce2-44be-8d0a-16a7f5bdae37"></script>
+    <ViewTransitions />
   </head>
+
   <body class="bg-darkslate-700 flex flex-col justify-center items-center">
     <slot name="loader" />
     <slot />
-  </body>
+  </body><style is:global>
+    @font-face {
+      font-family: "Ubuntu";
+      src: url("/fonts/Ubuntu-Regular.ttf") format("truetype-variations");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+      font-weight: 100 1000;
+    }
+    @font-face {
+      font-family: "Ubuntu-Bold";
+      src: url("/fonts/Ubuntu-Bold.ttf") format("truetype-variations");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+      font-weight: 100 1000;
+    }
+    @font-face {
+      font-family: "Ubuntu-Light";
+      src: url("/fonts/Ubuntu-Light.ttf") format("truetype-variations");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+      font-weight: 100 1000;
+    }
+    body {
+      margin: 0;
+      font-family: "Ubuntu", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Ubuntu", sans-serif;
+    }
+    p {
+      font-family: "Ubuntu";
+    }
+
+    b {
+      font-family: "Ubuntu-Bold";
+      font-weight: 700 !important;
+    }
+
+    .f-bold {
+      font-family: "Ubuntu-Bold";
+    }
+
+    .f-light {
+      font-family: "Ubuntu-Light";
+    }
+
+    /* Lists within .prose */
+    .prose ul,
+    .prose ol {
+      margin-left: 2em;
+      margin-bottom: 1em;
+    }
+    .prose ul {
+      list-style-type: disc;
+    }
+    .prose ol {
+      list-style-type: decimal;
+    }
+  </style>
 </html>
-
-<style is:global>
-  @font-face {
-    font-family: "Ubuntu";
-    src: url("/fonts/Ubuntu-Regular.ttf") format("truetype-variations");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100 1000;
-  }
-  @font-face {
-    font-family: "Ubuntu-Bold";
-    src: url("/fonts/Ubuntu-Bold.ttf") format("truetype-variations");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100 1000;
-  }
-  @font-face {
-    font-family: "Ubuntu-Light";
-    src: url("/fonts/Ubuntu-Light.ttf") format("truetype-variations");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100 1000;
-  }
-  body {
-    margin: 0;
-    font-family: "Ubuntu", sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Ubuntu", sans-serif;
-  }
-  p {
-    font-family: "Ubuntu";
-  }
-
-  b {
-    font-family: "Ubuntu-Bold";
-    font-weight: 700 !important;
-  }
-
-  .f-bold {
-    font-family: "Ubuntu-Bold";
-  }
-
-  .f-light {
-    font-family: "Ubuntu-Light";
-  }
-
-  /* Lists within .prose */
-  .prose ul,
-  .prose ol {
-    margin-left: 2em;
-    margin-bottom: 1em;
-  }
-  .prose ul {
-    list-style-type: disc;
-  }
-  .prose ol {
-    list-style-type: decimal;
-  }
-</style>

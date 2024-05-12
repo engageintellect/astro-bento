@@ -1,6 +1,7 @@
 ---
 import BasicLayout from "./BasicLayout.astro";
 import Navbar from "../components/Navbar.astro";
+import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -11,6 +12,10 @@ interface Props {
 
 const { title, description, page, fullScreen } = Astro.props;
 ---
+
+<head>
+  <ViewTransitions />
+</head>
 
 <BasicLayout title={title} description={description}>
   <div
