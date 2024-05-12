@@ -20,6 +20,12 @@ const { title, description, date, url, category, tags, image } = Astro.props;
     class="text-sm md:text-base decoration-none flex flex-col justify-between text-neutral-100 ease-in-out transition-colors border-gray-700 hover:border-gray-500 border my-2 p-4 rounded"
   >
     <div class="flex items-center justify-between">
+      <div
+        class="border border-gray-500 px-2 rounded capitalize text-xs text-neutral-100/70"
+      >
+        {category}
+      </div>
+
       <time
         class="text-xs text-neutral-100/70"
         datetime={date.toISOString()}
@@ -27,12 +33,6 @@ const { title, description, date, url, category, tags, image } = Astro.props;
       >
         {formatDate(date)}
       </time>
-
-      <div
-        class="border border-gray-500 px-2 rounded capitalize text-xs text-neutral-100/70"
-      >
-        {category}
-      </div>
     </div>
 
     <a
