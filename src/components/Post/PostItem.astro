@@ -37,7 +37,7 @@ const { title, description, date, url, category, tags, image } = Astro.props;
 
     <a
       href={`/${category}/${url}`}
-      class="flex items-stretch gap-2 w-full h-full my-2"
+      class="flex items-stretch gap-2 w-full h-full my-2 group"
     >
       <div
         class="w-1/3 lg:w-1/2 flex border border-gray-500/50 rounded transition-all duration-300"
@@ -56,7 +56,9 @@ const { title, description, date, url, category, tags, image } = Astro.props;
             {title}
           </div>
 
-          <div class="text-neutral-100/70 f-light">
+          <div
+            class="text-neutral-100/70 md:group-hover:text-neutral-100 transition-all duation-300 f-light"
+          >
             {description}
           </div>
         </div>

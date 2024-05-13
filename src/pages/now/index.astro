@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import PostFeedLayout from "../../layouts/PostFeedLayout.astro";
 import PostItem from "../../components/Post/PostItem.astro";
 import "../../styles/global.css";
+import { Icon } from "astro-icon/components";
 
 const posts = (await getCollection("posts"))?.sort(
   (blogEntryA, blogEntryB) =>
@@ -26,7 +27,12 @@ const posts = (await getCollection("posts"))?.sort(
   >
     <div class="h-full"></div>
 
-    <h1 class="text-5xl f-bold mb-2 text-neutral-100">Now</h1>
+    <h1
+      class="text-5xl f-bold mb-2 text-neutral-100 flex items-center justify-between gap-2"
+    >
+      <Icon name="mdi:fire" class="w-12 h-12" />
+      <div>Now</div>
+    </h1>
     <div class="f-light mb-4 text-neutral-100/50">
       What I'm working on right now. Ideas, notes, and ramblings.
     </div>

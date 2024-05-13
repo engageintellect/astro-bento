@@ -20,7 +20,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
 <Card colSpan="md:col-span-1" rowSpan="md:row-span-2">
   <div class="group">
     <div class="flex justify-between w-full items-start mb-2">
-      <div class="flex flex-col">
+      <div class="flex flex-col gap-5">
         <a href="/now" class="text-white text-xl f-bold">Now</a>
         <a href="https://sive.rs/nowff" target="_blank">
           <span
@@ -42,7 +42,7 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
             rel="noopener noreferrer"
             class="text-neutral-100 md:text-neutral-100/70 text-sm f-light group/newPost transition-colors duration-300"
           >
-            <div class="md:group-hover/newPost:text-neutral-100 md:group-hover/newPost:underline">
+            <div class="md:group-hover/newPost:text-neutral-100">
               "{mostRecentNowPost.data.description}"
             </div>
           </a>
