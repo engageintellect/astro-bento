@@ -68,7 +68,6 @@ Deploying your website on Vercel. it's optional but I reccomand it in order to d
 You just need to fork this repo and link it to your Vercel account.
 
 ```bash
-# Deploy on Vercel
 pnpm i @astrojs/vercel
 pnpm i -g vercel
 $ vercel
