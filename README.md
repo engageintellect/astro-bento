@@ -50,7 +50,7 @@ $ npm run dev
 ## Example Endpoint
 
 ```bash
-curl http://localhost:4321/api/hello.json
+curl http://localhost:4321/api/v1/hello.json
 ```
 
 ## REMOVE THE umami analytics script tag (or replace it with your id) in `src/layouts/Layout.astro`
