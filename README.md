@@ -11,7 +11,7 @@
 - Ready to be deployed on [Vercel](https://www.vercel.com/)
 - Blog
 - RSS support (your-domain/rss.xml)
-- Cool 3d globe
+- Cool 3d globe (with [D3](https://d3js.org/))
 
 ## Tech Stack
 
@@ -21,7 +21,7 @@
 - [D3](https://d3js.org/)
 - [Tailwind](https://tailwindcss.com/)
 
-# Steps ▶️
+## Getting Started
 
 ```bash
 # Clone this repository
@@ -53,14 +53,23 @@ $ npm run dev
 curl http://localhost:4321/api/v1/hello.json
 ```
 
-## REMOVE THE umami analytics script tag (or replace it with your id) in `src/layouts/Layout.astro`
+## Analytics
 
-# Configuration
+**NOTE:** REMOVE THE umami analytics script tag (or replace it with your id) in `src/layouts/Layout.astro`
+
+## Configuration
 
 remember to replace the `site` and other properties with your data in `astro.config.mjs`
 
-# Deploy on Vercel 🚀
+## Deploy on Vercel
 
 Deploying your website on Vercel. it's optional but I reccomand it in order to deploy it faster and easly.
 
 You just need to fork this repo and link it to your Vercel account.
+
+```bash
+# Deploy on Vercel
+pnpm i @astrojs/vercel
+pnpm i -g vercel
+$ vercel
+```
