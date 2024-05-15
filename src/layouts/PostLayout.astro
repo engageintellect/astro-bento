@@ -60,7 +60,7 @@ const { frontmatter } = Astro.props;
               href={`/tags/${formatTag(tag)}`}
               class="no-underline hover:no-underline text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
             >
-              #{tag}
+              #{formatTag(tag)}
             </a>
           ))
         }
