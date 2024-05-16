@@ -14,7 +14,7 @@ nowPosts.sort(
 );
 
 // Take the first item from the sorted array as the most recent post
-const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallback if no posts are found
+const mostRecentProjectPost = nowPosts[0] || null; // This ensures there is a fallback if no posts are found
 ---
 
 <Card
@@ -40,20 +40,20 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
     </div>
     <div class="line-clamp-4">
       {
-        mostRecentNowPost ? (
+        mostRecentProjectPost ? (
           <a
-            href={`/${mostRecentNowPost.data.category}/${mostRecentNowPost.slug || "#default"}`}
+            href={`/${mostRecentProjectPost.data.category}/${mostRecentProjectPost.slug || "#default"}`}
             target=""
             rel="noopener noreferrer"
             class="text-neutral-100 md:text-neutral-100/70 text-sm f-light md:group-hover:text-neutral-100 transition-colors duration-300"
           >
             <div class="group/newPost">
               <div class="f-bold text-lg text-neutral-100">
-                {mostRecentNowPost.data.title}
+                {mostRecentProjectPost.data.title}
               </div>
 
               <div class="text-neutral-100/70 md:group-hover/newPost:text-neutral-100">
-                {mostRecentNowPost.data.description}"
+                {mostRecentProjectPost.data.description}"
               </div>
             </div>
           </a>

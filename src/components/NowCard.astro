@@ -42,8 +42,12 @@ const mostRecentNowPost = nowPosts[0] || null; // This ensures there is a fallba
             rel="noopener noreferrer"
             class="text-neutral-100 md:text-neutral-100/70 text-sm f-light group/newPost transition-colors duration-300"
           >
+            <div class="f-bold text-neutral-100">
+              {mostRecentNowPost.data.title}
+            </div>
+
             <div class="md:group-hover/newPost:text-neutral-100">
-              "{mostRecentNowPost.data.description}"
+              {mostRecentNowPost.data.description}"
             </div>
           </a>
         ) : (
