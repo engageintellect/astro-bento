@@ -109,6 +109,27 @@ const schema =
     />
 
     <link rel="preconnect" href="https://cdn.fontshare.com" />
+    <link
+      rel="preload"
+      href="/fonts/Ubuntu-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Ubuntu-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Ubuntu-Light.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <script
       defer
@@ -119,7 +140,8 @@ const schema =
   <body class="bg-darkslate-700 flex flex-col justify-center items-center">
     <slot name="loader" />
     <slot />
-  </body><style is:global>
+  </body>
+  <style is:global>
     @font-face {
       font-family: "Ubuntu";
       src: url("/fonts/Ubuntu-Regular.ttf") format("truetype-variations");
