@@ -1,0 +1,117 @@
+---
+import { Font } from "@rive-app/canvas/rive_advanced.mjs";
+import { formatDate } from "../../lib/helpers";
+import { formatTag } from "../../lib/helpers";
+
+interface Props {
+  title: string;
+  image: string;
+  date: Date;
+  url: string;
+  category: string;
+  tags: string[];
+  description: string;
+}
+
+const { title, description, date, url, category, tags, image } = Astro.props;
+---
+
+<li class="w-full">
+  <div
+    class="text-sm md:text-base decoration-none flex flex-col justify-between text-neutral-100 ease-in-out transition-colors border-gray-700 hover:border-gray-500 border my-2 rounded-lg"
+  >
+    <div class="flex items-stretch gap-2 w-full h-full group">
+      <div class="w-1/3 lg:w-1/3 flex rounded transition-all duration-300">
+        <!-- Flex for proper height management -->
+
+        <a href={`/${category}/${url}`} class="relative">
+          <img
+            src={image}
+            alt={title}
+            class="object-cover w-full min-h-32 h-full rounded border border-gray-500"
+          />
+
+          <div
+            class="absolute top-0 left-0 bg-gradient-to-l from-darkslate-700 to-none h-full w-full"
+          >
+          </div>
+        </a>
+      </div>
+
+      <div class="w-2/3 lg:w-2/3 flex flex-col justify-between p-2 md:p-4">
+        <div>
+          <div class="flex items-center justify-between w-full">
+            <time
+              class="text-xs text-neutral-100/70"
+              datetime={date.toISOString()}
+              data-date={date.toISOString()}
+            >
+              {formatDate(date)}
+            </time>
+
+            <a href={`/${category}`}>
+              <div
+                class="border border-gray-500 px-2 rounded capitalize text-sm text-neutral-100/70"
+              >
+                {category}
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-5">
+            <a href={`/${category}/${url}`}>
+              <div class="inline-block f-bold text-2xl">
+                {title}
+              </div>
+            </a>
+
+            <a href={`/${category}/${url}`}>
+              <div
+                class="text-neutral-100/70 md:group-hover:text-neutral-100 transition-all duation-300 f-light line-clamp-2"
+              >
+                {description}
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-neutral-100 mt-5 mb-2">Technologies:</div>
+          <div class="flex gap-1 overflow-scroll">
+            {
+              tags.map((tag) => (
+                <a
+                  href={`/tags/${formatTag(tag)}`}
+                  class="text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
+                >
+                  #{formatTag(tag)}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="text-neutral-100/50 f-thin text-sm">Technologies:</div>
+
+    <div class="flex gap-1 overflow-scroll">
+      {
+        tags.map((tag) => (
+          <a
+            href={`/tags/${formatTag(tag)}`}
+            class="text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
+          >
+            #{formatTag(tag)}
+          </a>
+        ))
+      }
+    </div> -->
+</li>
+
+<style is:global>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+</style>
