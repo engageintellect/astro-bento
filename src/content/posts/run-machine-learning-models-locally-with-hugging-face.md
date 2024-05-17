@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 pubDate: 2023-08-26T00:00:00Z
-title: Run Machine Learning Models Locally with Hugging Face
+title: Running Hugging Face Transformers Locally
 description: A guide on how to use Hugging Face Transformers to run machine learning models locally.
 excerpt: Artificial Intelligence and Machine Learning are transforming industries, and one of the key technologies driving this revolution is the transformer architecture.
 category: now
