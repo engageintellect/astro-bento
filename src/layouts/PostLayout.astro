@@ -51,22 +51,26 @@ const { frontmatter } = Astro.props;
         {frontmatter.description}
       </div>
 
-      <div class="mt-5 text-neutral-100/70 f-light text-sm">Technologies:</div>
+      <div class="">
+        <div class="mt-5 text-neutral-100/70 f-light text-sm">
+          Technologies:
+        </div>
 
-      <div class="flex gap-1 w-full overflow-scroll mb-2">
-        {
-          frontmatter.tags.map((tag) => (
-            <a
-              href={`/tags/${formatTag(tag)}`}
-              class="no-underline hover:no-underline text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
-            >
-              #{formatTag(tag)}
-            </a>
-          ))
-        }
+        <div class="flex gap-1 w-full overflow-scroll mb-2">
+          {
+            frontmatter.tags.map((tag) => (
+              <a
+                href={`/tags/${formatTag(tag)}`}
+                class="no-underline hover:no-underline text-sm bg-gray-700 text-neutral-100 rounded px-2 py-1 lowercase whitespace-nowrap"
+              >
+                #{formatTag(tag)}
+              </a>
+            ))
+          }
+        </div>
       </div>
 
-      <a href={frontmatter.projectURL || ""}>
+      <a href={frontmatter.projectURL || "hover:skew-y-12"}>
         <img
           src={frontmatter.image}
           alt=""
@@ -75,13 +79,13 @@ const { frontmatter } = Astro.props;
       </a>
     </div>
 
-    <div class="flex items-center gap-2 mt-2 w-full">
+    <div class="flex items-center gap-2 w-full bg-darkslate-700 py-2">
       {
         frontmatter.projectURL && (
           <a href={frontmatter.projectURL} class="w-full group">
             <button class="text-neutral-100 bg-gray-700 md:hover:text-neutral-100 transition-all duration-200 rounded py-2 px-4 flex-1 w-full">
               <div class="flex items-center justify-between gap-2">
-                <div>Go to App</div>
+                <div>go to app</div>
                 <Icon
                   name="mdi:login"
                   class="w-5 h-5 md:group-hover:scale-110 transition-all duration-100"
@@ -96,7 +100,7 @@ const { frontmatter } = Astro.props;
           <a href={frontmatter.repoURL} class="w-full group">
             <button class="text-neutral-100 bg-gray-700 md:hover:text-neutral-100 transition-all duration-200 rounded py-2 px-4 flex-1 w-full">
               <div class="flex items-center justify-between gap-2">
-                <div>Repository</div>
+                <div>star on github</div>
                 <Icon
                   name="mdi:github"
                   class="w-5 h-5 md:group-hover:scale-110 transition-all duration-100"
