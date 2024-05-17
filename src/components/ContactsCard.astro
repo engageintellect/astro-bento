@@ -15,60 +15,60 @@ import { Icon } from "astro-icon/components";
 
       <div class="w-full mt-2">
         <a href={`mailto:${LINKS.email}`} aria-label="email me">
-          <Button aria-label="github profile">
+          <Button aria-label="email me">
             <div class="flex items-center gap-2">
               <Icon name="ri:mail-fill" class="h-5 w-5" />
               <div>email me</div>
-              <span class="sr-only">GitHub Profile</span>
+              <span class="sr-only">Email Me</span>
             </div>
           </Button>
         </a>
         <!-- <p class="pt-2 text-sm">Orange County, CA</p> -->
       </div>
-      <div class="flex flex-col mt-4 w-fit">
+      <div class="flex flex-col mt-4 w-full">
         <h2 class="text-neutral-100/70">Socials</h2>
-        <ul>
-          <li>
+        <div class="flex flex-col gap-1 w-full">
+          <div>
             <a
               href={LINKS.linkedin}
               target="_blank"
-              class="flex items-center gap-2"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
             >
               <Icon name="ri:linkedin-fill" class="h-5 w-5" />
               <div>LinkedIn</div>
             </a>
-          </li>
-          <li>
+          </div>
+          <div>
             <a
               href={LINKS.github}
               target="_blank"
-              class="flex items-center gap-2"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
             >
               <Icon name="ri:github-fill" class="h-5 w-5" />
               <div>Github</div>
             </a>
-          </li>
-          <li>
+          </div>
+          <div>
             <a
               href={LINKS.medium}
               target="_blank"
-              class="flex items-center gap-2"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
             >
               <Icon name="ri:medium-fill" class="h-5 w-5" />
               <div>Medium</div>
             </a>
-          </li>
-          <li>
+          </div>
+          <div>
             <a
               href={LINKS.discord}
               target="_blank"
-              class="flex items-center gap-2"
+              class="flex items-center gap-2 border border-darkslate-100 md:hover:border-gray-500 transition-colors duration-300 py-1 px-2 rounded-lg"
             >
               <Icon name="ri:discord-fill" class="h-5 w-5" />
               <div>Discord</div>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
