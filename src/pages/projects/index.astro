@@ -30,9 +30,18 @@ const posts = (await getCollection("posts"))?.sort(
       <div>Projects</div>
       <Icon name="material-symbols:dashboard-outline" class="w-12 h-12" />
     </h1>
+
     <div class="f-light mb-4 text-neutral-100/50">
+      <span class="">
+        {
+          JSON.stringify(
+            posts?.filter((post) => post.data.category === "projects").length
+          )
+        }
+      </span>
       Personal projects and experiments
     </div>
+
     <div class="w-full">
       <ul class="">
         {
