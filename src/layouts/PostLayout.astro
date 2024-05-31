@@ -34,9 +34,14 @@ const { frontmatter } = Astro.props;
     <!-- <hr class="border-[.5px] border-gray-100/10 mb-5" /> -->
 
     <div
-      class="w-fit px-4 py-1 rounded rounded-b-none border-b-none border border-gray-500 text-neutral-100 capitalize text-sm"
+      class="w-fit px-4 py-1 rounded rounded-b-none border-b-none border border-gray-500"
     >
-      {frontmatter.category}
+      <a
+        href=`/${frontmatter.category}`
+        class="decoration-none text-neutral-100 capitalize text-sm"
+      >
+        {frontmatter.category}
+      </a>
     </div>
     <div class="border-t border-gray-500">
       <div class="flex justify-between mt-2 text-neutral-100/50 text-sm">
@@ -52,7 +57,7 @@ const { frontmatter } = Astro.props;
       </div>
 
       <div class="">
-        <div class="mt-5 text-neutral-100/70 f-light text-sm">
+        <div class="mt-5 mb-1 text-neutral-100/50 f-light text-sm">
           Technologies:
         </div>
 
